@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 6, 2017, 11:18:20 AM
+    Author     : DELL
+*/
+
+@font-face {
+    font-family: 'IranianSansBold';
+    /*src: url('/assets/fonts/iranian-sans/2619cbcea5e87e4bb3d77b2e2a94466f/730e5ef8ba88ae5a68b261e84125043c/IranianSansBold.ttf') format('truetype');*/
+    src: url('irsansb.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IranianSansRegular';
+    /*src: url('/assets/fonts/iranian-sans/2619cbcea5e87e4bb3d77b2e2a94466f/e20972aee7112921a84fc1474cfba7a5/IranianSansRegular.ttf') format('truetype');*/
+    src: url('irsans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* The following rules are deprecated. */ 
+
+@font-face {
+    font-family: 'Iranian Sans';
+    /*src: url('/assets/fonts/iranian-sans/2619cbcea5e87e4bb3d77b2e2a94466f/730e5ef8ba88ae5a68b261e84125043c/IranianSansBold.ttf') format('truetype');*/
+    src: url('irsansb.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Iranian Sans';
+    /*src: url('/assets/fonts/iranian-sans/2619cbcea5e87e4bb3d77b2e2a94466f/e20972aee7112921a84fc1474cfba7a5/IranianSansRegular.ttf') format('truetype');*/
+    src: url('irsans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

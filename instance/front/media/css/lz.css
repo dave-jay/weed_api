@@ -1,0 +1,47 @@
+
+.topNav{
+    margin-left:10%;
+    font-weight:bold;
+    float:left;
+    width:50%;
+}
+.topNav a{
+    color:#2f9cf4;
+    padding:0px 20px;
+    font-size:16px;
+}
+.topNav a:hover{
+    border-bottom:2px solid #2f9cf4;
+}
+._card_title{
+    font-weight:bold;
+}
+.onboarding_steps{
+    position:absolute;
+    width:100%;
+    bottom:0px;
+}
+.onboarding_done{
+    color:#9f9f9f;
+    text-decoration:line-through !important;
+}
+.bold-font{
+    font-weight:bold;
+}
+.step1_select{
+    margin-left:3rem;
+}
+.step1_vehicle_selection .select-dropdown{
+    margin-top:-1rem;
+}
+.panelWait{
+    opacity: 0.1;
+    cursor:wait;
+    background-color:#CCC;
+}
+.errorBox{
+    border:2px solid red !important;
+}
+#sign-in, #sign-up, #forgot-password, #lock{
+    background:white none repeat scroll 0 0;
+}

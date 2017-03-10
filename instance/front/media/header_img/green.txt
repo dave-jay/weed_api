@@ -1,0 +1,21 @@
+  <a href="<?php echo _U ?>subscribe-to-brilliants-event-planner-blog">
+                                                                                                    <span style="-moz-user-select: none !important;
+                                                                                                          background-color: rgb(121, 143, 77) !important;
+                                                                                                          background-image: -moz-linear-gradient(center top , rgb(121, 143, 77), rgb(90, 107, 57)) !important;
+                                                                                                          border: 8px solid rgb(197, 219, 153) !important;
+                                                                                                          border-radius: 16px !important;
+                                                                                                          box-shadow: 0 1px rgb(151, 178, 96) inset !important;
+                                                                                                          color: rgb(255, 255, 255) !important;
+                                                                                                          cursor: pointer !important;
+                                                                                                          display: inline-block !important;
+                                                                                                          font-family: sans-serif !important;
+                                                                                                          font-weight: bold !important;
+                                                                                                          line-height: 1.5em !important;
+                                                                                                          padding: 6px 18px !important;
+                                                                                                          text-align: center !important;
+                                                                                                          text-decoration: none !important;
+                                                                                                          text-shadow: 0 -1px rgb(36, 42, 23) !important;">
+                                                                                                        <span style="color: #ffffff; font-size: 30px; font-family: sans-serif; line-height: 1.5em;">Subscribe to the&nbsp;<br>Event Planner Blog Today!</span>
+
+                                                                                                    </span>
+                                                                                                </a>

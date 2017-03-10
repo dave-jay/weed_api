@@ -1,0 +1,1 @@
+To debug your code, Please set 777 permission to 'error_log' directory.
