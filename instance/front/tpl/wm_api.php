@@ -5,6 +5,13 @@
         padding-bottom: 10px;
 
     }
+    .row .col{
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 2px;
+    }
 </style>
 <div class="card-panel" style="">
     <div class="row " style="margin:0px;padding: 1rem; ">
