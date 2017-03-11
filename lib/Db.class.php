@@ -5,9 +5,9 @@
  * 
  * Normal DB class with singleton pattern
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  * 
  */
 class Db {
@@ -73,12 +73,12 @@ class Db {
 
     /**
      * wrapper function for update query
-     * @author Hardik Panchal 
+     * @author Dave Jay 
      * @param String $table
      * @param Array $array list of fields
      * @param String $where where condition
      * @return Integer return number rows updated
-     * @package Aber
+     * @package Weed_API
      * 
      */
     function update_query($table, $fields, $condition) {
@@ -107,12 +107,12 @@ class Db {
 
     /**
      * wrapper function for insert query
-     * @author Hardik Panchal 
+     * @author Dave Jay 
      * @param String $table
      * @param Array $array list of fields
 
      * @return Integer return number rows inserted
-     * @package Aber
+     * @package Weed_API
      * 
      */
     function insert_query($table, $fields, $operation='INSERT') {

@@ -4,7 +4,7 @@
  * Main Booking Engine Logic Class
  * 
  * @since July 10, 2016
- * @author Hardik Panchal
+ * @author Dave Jay
  * 
  */
 class calculatePrice1 {

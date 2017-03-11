@@ -7,74 +7,130 @@
     }
     label.error{
         position: relative;
-
     }
 </style>
-<div class="card-panel" style="">
-    <form action="wm_api" method="post" id="wm_api_change">
-        <div class="row">
+<!--<div class="card-panel" style="">-->
+<form action="view_wm_api" method="post" id="view_wm_api_change">
+    <div class="col s12 m12 l12">
+        <div class="card" >
+            <div class="title">
+                <!--<div class="row">--> 
+                    <!--<i class="fa fa-cab prefix small"></i>&nbsp;-->
+                <span style="font-weight:bold;font-size:16px; "><?php print _t('43', 'View') ?>  : <?php print _t('40', 'List Of Content') ?></span>
+                <span class="right" style="color: orangered; font-weight:bold;font-size:16px;margin-right: 10%; "></span>
+                <!--</div>-->
+            </div>
+            <div class="content" >
+                <table id="table2" class="display table table-hover">
+                    <!--                    <div class="todo-card right">
+                                            <div class="todo-task ">
+                                                <input type="checkbox" id="chkselectAll" name="chkAll" data-parsley-mincheck="2" class="subject-list" onClick="selectAll(this, 'chk-list')"  >
+                                                <label for="chkselectAll"><?php print _t('90', 'Select All') ?></label>
+                                            </div>
+                                        </div>-->
+                    <!--                        <div class="todo-card right">
+                                                <div class="todo-task ">
+                                                    <input type="checkbox" id="unchkAll" name="chkAll" checked class="subject-list" >
+                                                    <label for="unchkAll">Unselect All</label>
+                                                </div>
+                                            </div>-->
+                    <thead>
+                        <tr>
+                            <th><?php print _t('346', '#') ?></th>
+                            <th><?php print _t('32', 'THC %') ?></th>
+                            <th class="hide-on-med-and-down" ><?php print _t('11', 'THCA') ?></th>
+                            <th class="hide-on-med-and-down"><?php print _t('13', 'CBD') ?></th>
+                            <th style=""><?php print _t('14', 'CBDA') ?></th>
+                            <th class="hide-on-med-and-down"><?php print _t('35', 'CBN') ?></th>
+                            <th class="hide-on-small-and-down"><?php print _t('34', 'Strain Category') ?></th>
 
-            <div class="col m12 l12 s12"> 
-                <div class="input-field"> 
-                    <i class="mdi-action-label prefix "></i> 
-                    <!--<span for="thc" class="help-span">THC</span>-->
-                    <input id="thc" type="text" name="thc" value="" > 
-                    <label for="thc" class="helpertext">THC %</label> 
-                    <div id="errorbox_thc" style="clear: both;"></div>
-                </div> 
-            </div> 
-            <div class="col m12 l12 s12"> 
-                <div class="input-field"> 
-                    <i class="mdi-action-label prefix "></i> 
-                    <input id="thca" type="text" name="thca" value="" > 
-                    <label for="thca" class="helpertext">THCA</label> 
-                    <div id="errorbox_thca" style="clear: both;"></div>
-                </div> 
-            </div> 
-            <div class="col m12 l12 s12"> 
-                <div class="input-field"> 
-                    <i class="mdi-action-label prefix "></i> 
-                    <input id="cbd" type="text" name="cbd" value="" > 
-                    <label for="cbd" class="helpertext">CBD</label> 
-                    <div id="errorbox_cbd" style="clear: both;"></div>
-                </div> 
-            </div> 
-            <div class="col m12 l12 s12"> 
-                <div class="input-field"> 
-                    <i class="mdi-action-label prefix "></i> 
-                    <input id="cbda" type="text" name="cbda" value="" > 
-                    <label for="cbda" class="helpertext">CBDA</label> 
-                    <div id="errorbox_cbda" style="clear: both;"></div>
-                </div> 
-            </div> 
-            <div class="col m12 l12 s12"> 
-                <div class="input-field"> 
-                    <i class="mdi-action-label prefix "></i> 
-                    <input id="cbn" type="text" name="cbn" value="" > 
-                    <label for="cbn" class="helpertext">CBN</label> 
-                    <div id="errorbox_cbn" style="clear: both;"></div>
-                </div> 
-            </div> 
-            <div class="col m12 l12 s12"> 
-                <div class="input-field"> 
-                    <i class="mdi-action-label prefix "></i> 
-                    <input id="strain_cate" type="text" name="strain_cate" value="" > 
-                    <label for="strain_cate" class="helpertext">Strain Category</label> 
-                    <div id="errorbox_strain_cate" style="clear: both;"></div>
-                </div> 
-            </div> 
-            <div class="col m12 l12 s12" style="padding-bottom: 1rem;" > 
-                <div class="right"> 
 
-                    <!--<button type = "submit" name = "submit" class = "waves-effect waves-amber green btn-large z-depth-0 z-depth-1-hover"><?php print _t('215', 'Save'); ?></button>-->
-                    <button type ="submit" name="submit" id="submit" class ="waves-effect waves-amber green btn-large z-depth-0 z-depth-1-hover"><?php print _t('215', 'Save'); ?></button>
-                </div> 
-            </div> 
+<!--                                <th>Select for Next Station</th>-->
+                            <!--<th><?php print _t('', 'Action') ?> </th>-->
+<!--                                <th><?php print _t('36', 'Edit') ?> </th>
+                            <th><?php print _t('38', 'Move') ?> </th>
+                            <th><?php print _t('39', 'Reject') ?> </th>
+                            <th><?php print _t('378', 'Send SMS') ?></th>
+                            <th><?php print _t('89', 'Select for Next') ?> </th>-->
+
+<!--                                <th>Create User</th>-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // $query= q("select d.id,d.fname, d.lname,d.license_plate,d.phone,d.melli_no,v.make,v.modal from tb_driver d,  tb_vehicle v,tb_vehicle_driver vd where vd.driver_id=d.id and vd.vehicle_id=v.id and d.stage=2 and d.license_plate=v.license_plate");
+                        $i = 1;
+                        foreach ($query as $row) {
+                            $_SESSION[$row['id']] = $row['id'];
+                            ?>
+
+                            <tr>
+                                <!--<td style="width: 5%;"><?php echo $_SESSION[$row['id']]; ?></td>--> 
+                                <td style="width: 5%;"><?php echo $i; ?></td> 
+                                <td style="width: 15%;"><?php echo $row['thc']; ?>
+                                    <div class="hide-on-med-and-up">
+                                        <span>Melli Number:</span><br/>
+                                        <span><?php echo $row['melli_no']; ?></span><br/>
+                                        <span>Cell Number:</span><br/>
+                                        <span><?php echo $row['phone']; ?></span><br/>
+                                        <span>Make Model Year:</span><br/>
+                                        <span><?php
+                                            $md = $row['make_modal'];
+                                            if ($md == "other") {
+                                                $other = $row['make_modal_other'];
+                                            } else {
+                                                $other = "";
+                                            }
+                                            echo $row['make_modal'] . ' ' . $other . '-' . $row['year'];
+                                            ?></span>
+                                    </div>
+
+                                </td> 
+                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['thca']; ?></td> 
+                                <td  style="width: 15%;"class="ltr hide-on-med-and-down" id="td_phone_<?= $row['id']; ?>"><?php echo $row['cbd']; ?></td>  
+                                <td  style='word-break: break-all; width: 15%;'><?php echo $row['cbda']; ?></td> 
+                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['cbn'];?></td> 
+                                <td class="ltr hide-on-small-and-down" style="width: 15%;" >  
+                                    <?php
+                                     echo $row['strain_cate']; 
+//                                    $vin_arr = explode('-', $row["license_plate"]);
+                                    ?>
+                                    
+                                </td> 
+
+
+                        <input type="hidden" value ="<?php echo $_SESSION[$row['id']]; ?>" name='record_id' />
+                        </tr>
+                        <?php
+                        $i++;
+                    }
+                    if (count($query) == 0) {
+                        echo "<tr><td colspan='20'>";
+                        print _t('41', 'No records found!');
+                        echo "</td></tr>";
+                    }
+                    ?>
+                    </tbody>
+                </table>
+                <div style="clear: both"></div>
+                <br/>
+                <div>
+                    <!--<button data-tooltip='Click to Next' name="submit"  class="right waves-effect waves-light btn-large z-depth-0 z-depth-1-hover tooltipped" type="submit" onclick="chkbox()"><?php print _t('50', 'Next') ?></button>-->
+                </div>
+                <div style="clear: both"></div>
+            </div>
+
         </div>
-    </form>
-</div>
+        <div class="">
+            <input type="hidden" name="id" value="<?php print $_REQUEST['id']; ?>">
+            <input type="hidden" id="total_row" value="<?= count($query); ?>">
+        </div>
+
+    </div>
+</form>
+<!--</div>-->
 <div id="modal1"  class="modal modal-fixed-footer modal-fixed-header-footer " >
-    <form id="wm_api_edit" action="wm_api" method="post">
+    <form id="view_wm_api_edit" action="view_wm_api" method="post">
         <div class="modal-header">
             <div class="header-text">
 

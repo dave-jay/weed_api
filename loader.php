@@ -6,7 +6,7 @@
  * Inititaes controller + view
  * 
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
  * @package Aerus
  * 

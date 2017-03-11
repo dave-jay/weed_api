@@ -4,9 +4,9 @@
  * General Functions
  * 
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  * 
  */
 
@@ -15,9 +15,9 @@
  * @param String $var
  * @return Boolean
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  * 
  */
 function _set($var) {
@@ -50,9 +50,9 @@ function _t($key, $default_value) {
  * @param String $var
  * @return String $var
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  * 
  */
 function _e(&$s, $a = null) {
@@ -64,9 +64,9 @@ function _e(&$s, $a = null) {
  * 
  * @param String $string
  * @return String escaped string
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  */
 function _escape($string) {
     $string = stripslashes($string);
@@ -76,9 +76,9 @@ function _escape($string) {
 /**
  * Wrapper function for db insert query
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  */
 function qi($table, $fields, $operation = 'INSERT') {
     $db = Db::__d();
@@ -103,9 +103,9 @@ function qs($query) {
 /**
  * Wrapper function for db update query
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  */
 function qu($table, $fields, $condition) {
     $db = Db::__d();
@@ -118,9 +118,9 @@ function qu($table, $fields, $condition) {
  * @param String $timestamp optional unixtimestamp
  * @return String $date
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  */
 function _mysqlDate($timestamp = 0) {
     $timestamp = $timestamp ? $timestamp : time();
@@ -331,7 +331,7 @@ function _isLocalMachine() {
  * @param type $content
  * @param type $extra
  * 
- * @author  Hardik Panchal <hardikpanchal469@gmail.com>
+ * @author  Dave Jay <hardikpanchal469@gmail.com>
  * @since November 28, 2013
  */
 function _mail($to, $subject, $content, $extra = array()) {

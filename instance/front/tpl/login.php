@@ -117,7 +117,7 @@
     <div id="browserMessage" style="display: none;width:800px; margin:0 auto;">
         <div class="white" style="color: #545454;padding: 10px;">
             <div style="font-size: 14px;font-weight: bold;">
-                To get the best possible experience using <span style="color: red">Aber</span> we recommend that
+                To get the best possible experience using <span style="color: red">Weed_API</span> we recommend that
                 you upgrade to a modern web browser.
             </div>
             <p>

@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="_nK">
         <link rel="icon" href="<?php print _MEDIA_URL ?>images/aber-logo.png">
-        <title>Aber | <?php print _cg("page_title"); ?></title>
+        <title>Weed_API | <?php print _cg("page_title"); ?></title>
         <!-- Main -->
         <link rel="stylesheet" type="text/css" href="<?php print _MEDIA_URL ?>assets/_con/css/con-base.css?t=<?php print rand() ?>" />
         <link rel="stylesheet" type="text/css" href="<?php print _MEDIA_URL ?>css/lz.css?t=<?php print rand() ?>" />

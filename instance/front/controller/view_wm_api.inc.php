@@ -29,9 +29,10 @@ if (isset($_REQUEST['autosave'])) {
     }
     die;
 }
-$jsInclude = "wm_api.js.php";
-_cg("page_title", "wm_api");
-_cg("current_page", "wm_api");
+$query = q("select * from tb_form");
+$jsInclude = "view_wm_api.js.php";
+_cg("page_title", "view_wm_api");
+_cg("current_page", "view_wm_api");
 ?>
 
 

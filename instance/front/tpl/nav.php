@@ -53,14 +53,15 @@
                 </a>
             </div>
 
-            <div class="navbar topNav  " id="topNav" style="width: 70%; margin-left: 2%; font-size: 10px;">
+            <div class="navbar topNav  " id="topNav" style="width: 70%; margin-left: 2%; font-size: 14px;">
 
-                <a href="" class="dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo1' ? 'active_menu' : ''); ?>" data-activates="cs_dashboard-dropdown">Demo1 </a>
-                <a href="" class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo2' ? 'active_menu' : ''); ?>" data-activates="employees-dropdown"> Demo2</a>
-                <a href=""  class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo3' ? 'active_menu' : ''); ?>" data-activates="driver-dropdown"> Demo3</a>
+                <a href="<?php l('wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'wm_api' ? 'active_menu' : ''); ?>" >Add Content </a>
+                <a href="<?php l('view_wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'view_wm_api' ? 'active_menu' : ''); ?>" >View Content </a>
+                <!--<a href="" class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo2' ? 'active_menu' : ''); ?>" data-activates="employees-dropdown"> Demo2</a>-->
+<!--                <a href=""  class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo3' ? 'active_menu' : ''); ?>" data-activates="driver-dropdown"> Demo3</a>
                 <a href="" class="dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo4' ? 'active_menu' : ''); ?>" data-activates="vehicle-dropdown"> Demo4</a>
                 <a href="" class="dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo5' ? 'active_menu' : ''); ?>" data-activates="report-dropdown">Demo5</a>
-                <a href="" class="dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo6' ? 'active_menu' : ''); ?>" data-activates="office-dropdown">Demo6</a>
+                <a href="" class="dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo6' ? 'active_menu' : ''); ?>" data-activates="office-dropdown">Demo6</a>-->
             </div>
 
 

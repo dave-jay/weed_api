@@ -3,7 +3,7 @@
 /**
  *  Class Asana API
  * 
- * @author Hardik Panchal <hardikpanchal469@gmail.com>
+ * @author Dave Jay <hardikpanchal469@gmail.com>
  * @version 1.0
  * @package Brilliant
  * 

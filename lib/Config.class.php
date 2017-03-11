@@ -5,9 +5,9 @@
  * 
  * Class to handle config operations
  * 
- * @author Hardik Panchal 
+ * @author Dave Jay 
  * @version 1.0
- * @package Aber
+ * @package Weed_API
  * 
  */
 class Config {

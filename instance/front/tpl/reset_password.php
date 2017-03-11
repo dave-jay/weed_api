@@ -7,7 +7,7 @@
         <div class="col s8 logo" style="text-align: left;">
     <!--                    <img src="<?php print _MEDIA_URL ?>/images/MasirApp.png" alt="">-->
             <img src="<?php print _MEDIA_URL ?>/images/ks_labs-logo.png" style="height: 60px;width: 120px;" alt="">
-            <!--<span style="font-weight:bold;font-size:50px;color: #C71418;text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Aber</span>-->
+            <!--<span style="font-weight:bold;font-size:50px;color: #C71418;text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Weed_API</span>-->
         </div>
         <div class="card-panel">
 
