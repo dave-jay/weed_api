@@ -10,12 +10,12 @@ if (isset($_REQUEST['autosave'])) {
 ////    d($_REQUEST['hidthc']);
 //    die;
     $fields = array();
-    $fields['thc'] = _escape($dataAuto['hidthc']);
-    $fields['thca'] = _escape($dataAuto['hidthca']);
-    $fields['cbd'] = _escape($dataAuto['hidcbd']);
-    $fields['cbda'] = _escape($dataAuto['hidcbda']);
-    $fields['cbn'] = _escape($dataAuto['hidcbn']);
-    $fields['strain_cate'] = _escape($dataAuto['hidstrain_cate']);
+    $fields['thc'] = _escape($dataAuto['c_thc']);
+    $fields['thca'] = _escape($dataAuto['c_thca']);
+    $fields['cbd'] = _escape($dataAuto['c_cbd']);
+    $fields['cbda'] = _escape($dataAuto['c_cbda']);
+    $fields['cbn'] = _escape($dataAuto['c_cbn']);
+    $fields['strain_cate'] = _escape($dataAuto['c_strain_cate']);
     $chk = qi("tb_form", $fields);
 //    d($chk);
     if (!empty($chk)) {

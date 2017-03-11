@@ -71,7 +71,7 @@
             html {
                 font-family: tahoma;
                 /*font-weight: 400;*/
-                color:#388e3c;
+                /*color:#388e3c;*/
             }
         </style>
 
@@ -84,6 +84,7 @@
                     /*font-weight: 400;*/
                     color:#388e3c;
                 }
+
             </style>    
         <?php endif; ?>
 
@@ -93,9 +94,16 @@
         <!--<link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />-->
 
         <style type="text/css">
-            .card-panel, .collapsible-header, select,.card{
-                background-color: <?php print isset($_REQUEST['user_type']) && $_REQUEST['user_type'] == '2' ? " #fbe9e7" : "#f1f8e9"  ?>; 
+            .active_menu{
+                background-color: #C71418;    
+                /*background-color: #49A9F5;*/    
+                color: white !important;
+                border-radius: 30px;
+
             }
+            /*            .card-panel, .collapsible-header, select,.card{
+                            background-color: <?php print isset($_REQUEST['user_type']) && $_REQUEST['user_type'] == '2' ? " #fbe9e7" : "#f1f8e9"  ?>; 
+                        }*/
         </style>
     </head>
     <!--

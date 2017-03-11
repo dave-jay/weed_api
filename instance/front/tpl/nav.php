@@ -46,7 +46,7 @@
             <div class="navbar navbar-brand" style="float: left;min-width: 10%;">
                 <a href="#" class="logo" >
                     <!--<img style="height: 62px;" src="<?php print _MEDIA_URL ?>images/AberLogo2.jpg" alt="Con">-->
-                    <img style="height: 42px;" class="logoset" src="<?php print _MEDIA_URL ?>images/ks_labs-logo.png" alt="Con">
+                    <img style="height: 56px;margin-left: 2px;" class="logoset" src="<?php print _MEDIA_URL ?>images/ks_labs-logo.png" alt="Con">
 <!--                    <span style="font-weight:bold;font-size:39px;color: #C71418; margin-left: 2%; text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
                           #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;">KS Lab</span>-->
 
@@ -55,8 +55,8 @@
 
             <div class="navbar topNav  " id="topNav" style="width: 70%; margin-left: 2%; font-size: 14px;">
 
-                <a href="<?php l('wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'wm_api' ? 'active_menu' : ''); ?>" >Add Content </a>
-                <a href="<?php l('view_wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'view_wm_api' ? 'active_menu' : ''); ?>" >View Content </a>
+                <a href="<?php l('wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'wm_api' ? 'active_menu' : ''); ?>" >Add Report </a>
+                <a href="<?php l('view_wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'view_wm_api' ? 'active_menu' : ''); ?>" >View Reports </a>
                 <!--<a href="" class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo2' ? 'active_menu' : ''); ?>" data-activates="employees-dropdown"> Demo2</a>-->
 <!--                <a href=""  class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo3' ? 'active_menu' : ''); ?>" data-activates="driver-dropdown"> Demo3</a>
                 <a href="" class="dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo4' ? 'active_menu' : ''); ?>" data-activates="vehicle-dropdown"> Demo4</a>

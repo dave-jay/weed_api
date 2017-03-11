@@ -13,12 +13,13 @@
     $("#wm_api_change").validate({
         ignore: [],
         rules: {
-            thc: {required: true},
-            thca: {required: true},
-            cbd: {required: true},
-            cbda: {required: true},
-            cbn: {required: true},
-            strain_cate: {required: true},
+            c_thc: {required: true},
+            c_thca: {required: true},
+            c_cbd: {required: true},
+            c_cbda: {required: true},
+            c_cbn: {required: true},
+
+            c_strain_cate: {required: true},
             fName: {required: true, regex: '^[\u0020\u0600-\u06FF\s]+$'},
             lName: {required: true, regex: '^[\u0020\u0600-\u06FF\s]+$'},
             fatherName: {required: true, regex: '^[\u0020\u0600-\u06FF\s]+$'},
@@ -45,12 +46,13 @@
             l_p_type: {required: true}
         },
         messages: {
-            thc: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
-            thca: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
-            cbd: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
-            cbda: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
-            cbn: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
-            strain_cate: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            c_thc: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            c_thca: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            c_cbd: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            c_cbda: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            c_cbn: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+          
+            c_strain_cate: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             fName: {required: '<span style="color:red;font-size:11px;">This value is required</span>', regex: '<span style="color:red;font-size:11px;">This value is not valid</span>'},
             lName: {required: '<span style="color:red;font-size:11px;">This value is required</span>', regex: '<span style="color:red;font-size:11px;">This value is not valid</span>'},
             fatherName: {required: '<span style="color:red;font-size:11px;">This value is required</span>', regex: '<span style="color:red;font-size:11px;">This value is not valid</span>'},
@@ -83,18 +85,19 @@
             l_p_type: {required: '<span style="color:red;font-size:11px;">This value is required</span>'}
         },
         errorPlacement: function (error, element) {
-            if (element.attr("name") == "thc") {
+            if (element.attr("name") == "c_thc") {
                 error.insertAfter($('#errorbox_thc'));
-            } else if (element.attr("name") == "thca") {
+            } else if (element.attr("name") == "c_thca") {
                 error.insertAfter($('#errorbox_thca'));
-            } else if (element.attr("name") == "cbd") {
+            } else if (element.attr("name") == "c_cbd") {
                 error.insertAfter($('#errorbox_cbd'));
-            } else if (element.attr("name") == "cbda") {
+            } else if (element.attr("name") == "c_cbda") {
                 error.insertAfter($('#errorbox_cbda'));
-            } else if (element.attr("name") == "cbn") {
+            } else if (element.attr("name") == "c_cbn") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_cbn'));
-            } else if (element.attr("name") == "strain_cate") {
+
+            } else if (element.attr("name") == "c_strain_cate") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_strain_cate'));
             } else {
@@ -109,11 +112,14 @@
             ModalCall();
         }
     });
+    function Closed() {
+        $("#modal1").closeModal();
+    }
     function SaveData() {
         $("#modal1").closeModal();
         $.ajax({
             url: '<?= _U . "wm_api"; ?>',
-            data: {autosave: 1, data: $('#wm_api_edit').serialize()},
+            data: {autosave: 1, data: $('#wm_api_change').serialize()},
             type: 'POST',
             dataType: 'json',
             success: function (r) {
@@ -123,7 +129,7 @@
                 {
                     Materialize.toast("Record added successfully!", 4000);
                     showWait();
-                    
+
                     location.href = "<?= _U . 'wm_api' ?>";
                 } else {
                     Materialize.toast("Warrning! Please try After Some time", 4000);
@@ -132,23 +138,23 @@
         });
     }
     function  ModalCall() {
-        $("#lblthc").text($("#thc").val());
-        $("#hidthc").val($("#thc").val());
+        $("#lblthc").text($("#c_thc").val());
+        $("#hidthc").val($("#c_thc").val());
 
-        $("#lblthca").text($("#thca").val());
-        $("#hidthca").val($("#thca").val());
+        $("#lblthca").text($("#c_thca").val());
+        $("#hidthca").val($("#c_thca").val());
 
-        $("#lblcbd").text($("#cbd").val());
-        $("#hidcbd").val($("#cbd").val());
+        $("#lblcbd").text($("#c_cbd").val());
+        $("#hidcbd").val($("#c_cbd").val());
 
-        $("#lblcbda").text($("#cbda").val());
-        $("#hidcbda").val($("#cbda").val());
+        $("#lblcbda").text($("#c_cbda").val());
+        $("#hidcbda").val($("#c_cbda").val());
 
-        $("#lblcbn").text($("#cbn").val());
-        $("#hidcbn").val($("#cbn").val());
+        $("#lblcbn").text($("#c_cbn").val());
+        $("#hidcbn").val($("#c_cbn").val());
 
-        $("#lblstrain_cate").text($("#strain_cate").val());
-        $("#hidstrain_cate").val($("#strain_cate").val());
+        $("#lblstrain_cate").text($("#c_strain_cate").val());
+        $("#hidstrain_cate").val($("#c_strain_cate").val());
 
         $("#modal1").openModal();
     }

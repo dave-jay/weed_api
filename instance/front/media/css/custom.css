@@ -8,6 +8,7 @@
         top: 0;
         left: 0; 
     }}*/
+/*
 .topNav{
     margin-left:10%;
     font-weight:bold;
@@ -20,7 +21,7 @@
     font-size:14px;
 }
 .active_menu{
-    /*    background-color: #C71418;    */
+   
     background-color: #94CA3A;    
     color: white !important;
     border-radius: 30px;
@@ -28,7 +29,7 @@
 .topNav a:hover{
     border-bottom:2px solid #28B473;
 }
-/* START - Custom Modal Style*/
+ START - Custom Modal Style
 .modal-fixed-header-footer{
     border-radius: 6px;
 }
@@ -50,7 +51,7 @@
 .modal-fixed-header-footer .flow-text{
     height: calc(100% - 112px) !important;
 }
-/* END - Custom Modal Style*/
+ END - Custom Modal Style
 
 .my-btn{
     margin-right: 20px !important;
@@ -62,7 +63,7 @@
     background-color: #999999;
 }
 
-/* START - Language Bar */
+ START - Language Bar 
 #lang_bar{
     z-index: 10000;background-color: #e6e6e6;display:none;
 }
@@ -79,13 +80,13 @@
     font-size: 1.4rem !important;
     cursor: pointer;
 }
-/* END - Language Bar */
+ END - Language Bar 
 
 .radio_list,.check_list{
     margin-left: 35%;
 }
 .radio_list_single_line{
-    /* margin-left: 17.5%; */
+     margin-left: 17.5%; 
 }
 html.rtl .radio_list_single_line{
     margin-right: 17.5%;
@@ -116,21 +117,14 @@ html.rtl select{
 
 .que_panel label.error{
     margin-left: 1rem;
-    margin-top: 0px; 
-    padding-top:  0px; 
 }
-
 html.rtl .que_panel label.error{
     margin-right: 1rem;
 }
 html.rtl .table > thead > tr > th, html.rtl .table > tbody > tr > th, html.rtl .table > tfoot > tr > th, html.rtl .table > thead > tr > td, html.rtl .table > tbody > tr > td, html.rtl .table > tfoot > tr > td {
     text-align: right;   
 }
-/*html.rtl .car_notes
-{
-    border-left: #999 solid 2px;
-    border-right:  solid 0px;
-}*/
+
 @media only screen and  (max-device-width: 767px) { 
     html.rtl  .car_notes
     { border-bottom:  none;
@@ -157,7 +151,7 @@ html.rtl .table > thead > tr > th, html.rtl .table > tbody > tr > th, html.rtl .
 html.rtl .ltr
 {
 
-    /*text-align: left ;*/
+ 
     direction: ltr;
     text-align: right;
 }
@@ -206,7 +200,6 @@ input[type=datetime-local],
 input[type=tel],
 input[type=number],
 input[type=search],
-
 textarea.materialize-textarea {
     display: block;
     background-color: transparent;
@@ -217,11 +210,10 @@ textarea.materialize-textarea {
     width: calc(100% - 1rem);
     font-size: 1rem;
     margin: 0 0 15px 0;
-    /*    padding: 0px 8px 0px 8px;*/
+ 
     padding-left: 8px;
     transition: all .3s; 
 }
-
 
 input:not([type]):focus:not([readonly]),
 input[type=text]:focus:not([readonly]),
@@ -238,9 +230,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6) !important;
     border-color: #8bc34a !important;
     outline: 0 !important;
-    color: grey;
 }
-
 .no-border{
     border-bottom: 1px solid #ccc !important;
     box-shadow: none !important;
@@ -253,7 +243,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 .help-span{
     color: #388e3c;
     font-weight:bold !important;
-    /*font-family: tahoma !important;*/
+    font-family: tahoma !important;
     font-size: 1rem;;
     padding: 0 3px;
     line-height: 2;
@@ -263,7 +253,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
     margin-right: 0rem !important;
 }
 html.rtl .ltr {
-    /* direction: rtl !important; */
+     direction: rtl !important; 
 }
 input:not([type]).valid, input:not([type]):focus.valid,
 input[type=text].valid,
@@ -318,7 +308,7 @@ textarea.materialize-textarea:focus.invalid {
     box-shadow: 0 1px 0 0 #cccccc;
 }
 .xyz{
-    /*direction: rtl;*/
+    direction: rtl;
     margin-top: 50px;
     position: fixed;
     overflow: hidden;
@@ -350,7 +340,7 @@ html.rtl .xyz {
     top: 0;
     left: 0;
     right: auto;
-    /*direction: rtl;*/
+    direction: rtl;
     bottom: 0;
     width: 210px;
     padding-bottom: 65px;
@@ -431,7 +421,7 @@ label#v1_value,label#v2_value,label#v3_value,label#v4_value,label#v5_value{
     color: #388e3c;
 }
 .card, .title, .content{
-    /*background-color:#fffffe;*/
+    background-color:#fffffe;
 }
 .tabs .tab a, .tabs .tab .sp-cancel {
     color: #33691e;
@@ -451,15 +441,15 @@ label#v1_value,label#v2_value,label#v3_value,label#v4_value,label#v5_value{
     position: absolute;
     bottom: 0;
     height: 0px;
-    /*width: auto;*/
-    /*background-color: #42A5F5;*/
+    width: auto;
+    background-color: #42A5F5;
     will-change: left, right;
 }
 label{
     color: #388e3c;
 }
 
-/* Radio With gap */
+ Radio With gap 
 [type="radio"].with-gap:checked + label:before {
     border-radius: 50%;
     border: 2px solid #33691e; }
@@ -501,16 +491,48 @@ html.rtl .help-text{
     margin: 0px 0px;
 }
 
-/*Just For Test Side Bar In Station 4 Pending Driver*/
+Just For Test Side Bar In Station 4 Pending Driver
 
 
 #btn-pending{
     margin: -25px;
-    /*padding: -2px;*/
+    padding: -2px;
 }
 html.rtl #btn-pending{
     margin: -25px;
     float: left;
 
-    /*padding: -2px;*/
+    padding: -2px;
+} */
+
+.help-text{
+    font-size: 11px;
+    color: #666666;
+    float: left;
+    padding-bottom: 1rem;
+    padding-top:0rem;
+    margin-left: 3rem;
+}
+.row .col{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2px;
+}
+label{
+    font-size: 14px;
+}
+.input-field label {
+    color: #9e9e9e;
+    cursor: text;
+    font-size: 1.2rem;
+    left: 1rem;
+    position: absolute;
+    top: 0.8rem;
+    transition: all 0.2s ease-out 0s;
+}
+.input-field label.active {
+    font-size: 1rem;
+    transform: translateY(-140%);
 }
