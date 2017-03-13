@@ -21,7 +21,7 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,500,700,900' rel='stylesheet' type='text/css'>-->
         <!--<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">--> 
         <!-- Clockpicker -->
-        <!--<link rel="stylesheet" type="text/css" href="<?php print _MEDIA_URL ?>bower_components/clockpicker/dist/jquery-clockpicker.min.css" />-->
+        <link rel="stylesheet" type="text/css" href="<?php print _MEDIA_URL ?>bower_components/clockpicker/dist/jquery-clockpicker.min.css" />
         <!-- MarkItUp -->
 <!--        <link rel="stylesheet" type="text/css" href="<?php print _MEDIA_URL ?>bower_components/markitup-1x/markitup/sets/default/style.css" />
         <link rel="stylesheet" type="text/css" href="<?php print _MEDIA_URL ?>bower_components/markitup-1x/markitup/skins/simple/style.css" />
@@ -176,7 +176,7 @@
         <!-- jQuery RAF (improved animation performance) -->
         <!--<script type="text/javascript" src="<?php print _MEDIA_URL ?>bower_components/jquery-requestAnimationFrame/dist/jquery.requestAnimationFrame.min.js"></script>-->
         <!-- Clockpicker -->
-        <!--<script type="text/javascript" src="<?php print _MEDIA_URL ?>bower_components/clockpicker/dist/jquery-clockpicker.min.js"></script>-->
+        <script type="text/javascript" src="<?php print _MEDIA_URL ?>bower_components/clockpicker/dist/jquery-clockpicker.min.js"></script>
         <!--persian calander-->
 
 <!--        <script type="text/javascript" src="<?php print _MEDIA_URL ?>/js/persian-date.js"></script>

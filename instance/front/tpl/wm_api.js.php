@@ -10,6 +10,7 @@
 ////            alert("click on submit");
 //        }
 //    });
+    var dataValue;
     $("#wm_api_change").validate({
         ignore: [],
         rules: {
@@ -18,8 +19,13 @@
             c_cbd: {required: true},
             c_cbda: {required: true},
             c_cbn: {required: true},
-
             c_strain_cate: {required: true},
+            photo: {required: true},
+            api_key: {required: true},
+            listing_type: {required: true},
+            listing_id: {required: true},
+            tested_at: {required: true},
+            name: {required: true},
             fName: {required: true, regex: '^[\u0020\u0600-\u06FF\s]+$'},
             lName: {required: true, regex: '^[\u0020\u0600-\u06FF\s]+$'},
             fatherName: {required: true, regex: '^[\u0020\u0600-\u06FF\s]+$'},
@@ -51,8 +57,13 @@
             c_cbd: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             c_cbda: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             c_cbn: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
-          
             c_strain_cate: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            api_key: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            listing_type: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            listing_id: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            photo: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            tested_at: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            name: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             fName: {required: '<span style="color:red;font-size:11px;">This value is required</span>', regex: '<span style="color:red;font-size:11px;">This value is not valid</span>'},
             lName: {required: '<span style="color:red;font-size:11px;">This value is required</span>', regex: '<span style="color:red;font-size:11px;">This value is not valid</span>'},
             fatherName: {required: '<span style="color:red;font-size:11px;">This value is required</span>', regex: '<span style="color:red;font-size:11px;">This value is not valid</span>'},
@@ -96,66 +107,112 @@
             } else if (element.attr("name") == "c_cbn") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_cbn'));
-
             } else if (element.attr("name") == "c_strain_cate") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_strain_cate'));
+            } else if (element.attr("name") == "api_key") {
+                console.log(element.attr("name"));
+                error.insertAfter($('#errorbox_api_key'));
+
+            } else if (element.attr("name") == "listing_type") {
+                console.log(element.attr("name"));
+                error.insertAfter($('#errorbox_listing_type'));
+
+            } else if (element.attr("name") == "listing_id") {
+                console.log(element.attr("name"));
+                error.insertAfter($('#errorbox_listing_id'));
+
+            } else if (element.attr("name") == "name") {
+                console.log(element.attr("name"));
+                error.insertAfter($('#errorbox_name'));
             } else {
                 error.insertAfter(element);
             }
         },
         submitHandler: function (form) {
 //            var dataValue = {autosave: 1, data: $('#form_driver_detail').serialize()}
-//            var dataValue = new FormData($("#form_driver_detail")[0]);
-//            dataValue.append('autosave', '1');
+//            var dataValupend('autosave', '1');
 //            form.submit();
-            ModalCall();
+            dataValue = new FormData($("#wm_api_change")[0]);
+            dataValue.append('autosave', '1');
+//            ModalCall(dataValue);
+            var x = '0';
+            SaveData(dataValue, x);
         }
     });
     function Closed() {
         $("#modal1").closeModal();
     }
-    function SaveData() {
-        $("#modal1").closeModal();
-        $.ajax({
-            url: '<?= _U . "wm_api"; ?>',
-            data: {autosave: 1, data: $('#wm_api_change').serialize()},
-            type: 'POST',
-            dataType: 'json',
-            success: function (r) {
-//                alert(r);
-
-                if (r.success == 1)
-                {
-                    Materialize.toast("Record added successfully!", 4000);
-                    showWait();
-
-                    location.href = "<?= _U . 'wm_api' ?>";
-                } else {
-                    Materialize.toast("Warrning! Please try After Some time", 4000);
-                }
-            }
-        });
+    function titleChenage(obj) {
+//        alert(obj);
+        var todayTime = new Date($(obj).val());
+        var month = (todayTime.getMonth() + 1);
+        var day = (todayTime.getDate());
+        var year = (todayTime.getUTCFullYear());
+//        alert(month + "/" + day + "/" + year);
+        $("#hid_tested_at").val(month + "/" + day + "/" + year);
+        $('#dateDiscription' + id).text(month + "/" + day);
     }
-    function  ModalCall() {
+    function SaveData(dataValue, x) {
+//    function SaveData() {
+//        $("#modal1").closeModal();
+//        var dataValue = new FormData($("#wm_api_change")[0]);
+////                dataValue.append('autosave', '1');
+//        alert(dataValue);
+        if (x == '0') {
+            ModalCall(dataValue);
+
+        } else {
+//            alert("its call");
+            $("#modal1").closeModal();
+            $.ajax({
+                url: '<?= _U . "wm_api"; ?>',
+//            data: {autosave: 1, data: $('#wm_api_change').serialize()},
+                type: 'POST',
+                data: dataValue,
+                async: false,
+                cache: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                processData: false,
+                dataType: 'json',
+                success: function (r) {
+//                alert(r);
+                    Materialize.toast("Record added successfully!", 4000);
+                    location.href = "<?= _U . 'wm_api' ?>";
+                    if (r.success == 1)
+                    {
+                        Materialize.toast("Record added successfully!", 4000);
+                        showWait();
+                        location.href = "<?= _U . 'wm_api' ?>";
+                    } else {
+                        Materialize.toast("Warrning! Please try After Some time", 4000);
+                    }
+                }
+
+            });
+            location.href = "<?= _U . 'wm_api' ?>";
+        }
+
+    }
+    function  ModalCall(dataValue) {
+        $("#lblname").text($("#name").val());
+        $("#hidname").val($("#name").val());
+
         $("#lblthc").text($("#c_thc").val());
         $("#hidthc").val($("#c_thc").val());
 
         $("#lblthca").text($("#c_thca").val());
         $("#hidthca").val($("#c_thca").val());
-
         $("#lblcbd").text($("#c_cbd").val());
         $("#hidcbd").val($("#c_cbd").val());
-
         $("#lblcbda").text($("#c_cbda").val());
         $("#hidcbda").val($("#c_cbda").val());
-
         $("#lblcbn").text($("#c_cbn").val());
         $("#hidcbn").val($("#c_cbn").val());
-
         $("#lblstrain_cate").text($("#c_strain_cate").val());
         $("#hidstrain_cate").val($("#c_strain_cate").val());
-
+        $("#hidData").val(dataValue);
         $("#modal1").openModal();
     }
     $(document).ready(function () {
@@ -166,16 +223,31 @@
 //        });
 
 
-
 <?php if ($success == "1") { ?>
             Materialize.toast('<?= $msg; ?>', 4000);
 <?php } ?>
 <?php if ($success == "-1") { ?>
             Materialize.toast('<?= $msg; ?>', 4000);
 <?php } ?>
-
+        //$("#doc_backgroud_check,#doc_non_owner,#photo_1, #photo_2, #photo_3,#doc_birth_cert,#doc_melli,#doc_insurance_cert,#doc_vehicle_card").on("change", function()
+        $("body").on("change", ".show_preview", function ()
+        {
+            var prev_id = $(this).data('prev_id');
+            var files = !!this.files ? this.files : [];
+            if (!files.length || !window.FileReader) {
+                return
+            }
+            ;
+            //if (/^image/.test( files[0].type))
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onloadend = function () {
+                $("#" + prev_id).show();
+                $("#" + prev_id).css("background-image", "url(" + this.result + ")");
+                $("#1" + prev_id).css("background-image", "url(" + this.result + ")");
+            };
+        });
     });
-
     $(document).ready(function () {
         $('.add_new').keydown(function (e) {
             if (e.keyCode === 13) {
@@ -189,22 +261,18 @@
             }
         });
     });
-
     function IsMobileNumber(phone) {
         var mob = /^[09]{1}[0-9]{9}$/;
         var txtMobile = document.getElementById(phone);
         if (mob.test(phone.value) == false) {
             // alert("Please enter valid mobile number.");
             phone.focus();
-
-
         }
         return true;
     }
     function showData(id) {
         $("#hiddenId").val(id);
         $("#filecontent").attr("src", "<?php print _U ?>var/quotes/quotes_" + id + ".html");
-
     }
     function UpdateStatus() {
         $.ajax({

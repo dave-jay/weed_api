@@ -67,7 +67,7 @@
                             <tr>
                                 <!--<td style="width: 5%;"><?php echo $_SESSION[$row['id']]; ?></td>--> 
                                 <td style="width: 5%;"><?php echo $i; ?></td> 
-                                <td style="width: 15%;"><?php echo $row['thc']; ?>
+                                <td style="width: 15%;"><?php echo $row['c_thc']; ?>
                                     <div class="hide-on-med-and-up">
                                         <span>Melli Number:</span><br/>
                                         <span><?php echo $row['melli_no']; ?></span><br/>
@@ -86,13 +86,13 @@
                                     </div>
 
                                 </td> 
-                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['thca']; ?></td> 
-                                <td  style="width: 15%;"class="ltr hide-on-med-and-down" id="td_phone_<?= $row['id']; ?>"><?php echo $row['cbd']; ?></td>  
-                                <td  style='word-break: break-all; width: 15%;'><?php echo $row['cbda']; ?></td> 
-                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['cbn'];?></td> 
+                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['c_thca']; ?></td> 
+                                <td  style="width: 15%;"class="ltr hide-on-med-and-down" id="td_phone_<?= $row['id']; ?>"><?php echo $row['c_cbd']; ?></td>  
+                                <td  style='word-break: break-all; width: 15%;'><?php echo $row['c_cbda']; ?></td> 
+                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['c_cbn'];?></td> 
                                 <td class="ltr hide-on-small-and-down" style="width: 15%;" >  
                                     <?php
-                                     echo $row['strain_cate']; 
+                                     echo $row['c_strain_cate']; 
 //                                    $vin_arr = explode('-', $row["license_plate"]);
                                     ?>
                                     

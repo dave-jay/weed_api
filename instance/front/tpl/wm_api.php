@@ -12,75 +12,133 @@
         padding-right: 1rem;
         margin-top: 2px;
     }
+    .prev_image{
+        height: 50px;
+        width: 50px;
+        background-position: center center;
+        background-size: cover;
+        display: none;
+        border: blanchedalmond groove thin;
+        box-shadow: gray 5px 5px 5px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+            #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+    }
 </style>
 <div class="card-panel" style="">
     <div class="row " style="margin:0px;padding: 1rem; ">
-        <form action="wm_api" method="post" id="wm_api_change">
+        <form action="wm_api" method="post" id="wm_api_change" >
+            <div class="card">
+    <!--<label>Batch Number:<?= $batchno ?></label>-->
+                <div class="title">Report</div>
+                <div class="content">
+                    <div class="input-field col l4 s12 m4"> 
+                        <i class="mdi-action-label prefix "></i> 
+                        <!--<span for="thc" class="help-span">THC</span>-->
+                        <input id="name" type="text" name="name" value="" > 
+                        <label for="name" class="helpertext">Name</label> 
+                        <div id="errorbox_name" style="clear: both;"></div>
+
+                    </div>
+                    <div class="input-field col l4 s12 m4"> 
+                        <i class="mdi-action-label prefix "></i> 
+                        <!--<span for="thc" class="help-span">THC</span>-->
+                        <input id="batch_no" type="text" name="batch_no" value="" > 
+                        <label for="batch_no" class="helpertext">Batch Number</label> 
+                        <div id="errorbox_" style="clear: both;"></div>
+
+                    </div>
+                    <div class="input-field col l4 s12 m4"> 
+                        <i class="mdi-action-label prefix "></i> 
+                        <!--<span for="thc" class="help-span">THC</span>-->
+                        <input id="menu_item_id" type="text" name="menu_item_id" value="" > 
+                        <label for="menu_item_id" class="helpertext">Weedmaps Menu Item ID</label> 
+                        <div id="errorbox_" style="clear: both;"></div>
+
+                    </div>
+                    <div  style="clear: both;"></div>
+                    <div class=" col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <!--<span for="thc" class="help-span">THC</span>-->
+                            <input id="c_thc" type="text" name="c_thc" value="" > 
+                            <label for="c_thc" class="helpertext">cannabinoids[THC%]</label> 
+                            <div id="errorbox_thc" style="clear: both;"></div>
+
+                        </div>
+                        <span class="help-text" style="color: #888;" >THC% of test result (as % of weight)</span>
+                    </div>
+                    <div class=" col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix  "></i> 
+                            <input id="c_thca" type="text" name="c_thca" value="" > 
+                            <label for="c_thca" class="helpertext">cannabinoids[THCa%]</label> 
+                            <div id="errorbox_thca" style="clear: both;"></div>
+
+                        </div>
+                        <span class="help-text" >THCa% of test result (as % of weight)</span>
+                    </div> 
+                    <!--<div  style="clear: both;"></div>-->
+                    <div class="col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <input id="c_cbd" type="text" name="c_cbd" value="" > 
+                            <label for="c_cbd" class="helpertext">cannabinoids[CBD%]</label> 
+                            <div id="errorbox_cbd" style="clear: both;"></div>
+                        </div> 
+                        <span class="help-text" >CBD% of test result (as % of weight)</span>
+                    </div> 
+                    <div  style="clear: both;"></div>
+                    <div class="col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <input id="c_cbda" type="text" name="c_cbda" value="" > 
+                            <label for="c_cbda" class="helpertext">cannabinoids[CBDa%]</label> 
+                            <div id="errorbox_cbda" style="clear: both;"></div>
+                        </div> 
+                        <span class="help-text" >CBDa% of test result (as % of weight)</span>
+                    </div> 
+                    <!--<div  style="clear: both;"></div>-->
+                    <div class="col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <input id="c_cbn" type="text" name="c_cbn" value="" > 
+                            <label for="c_cbn" class="helpertext">cannabinoids[CBN%]</label> 
+                            <div id="errorbox_cbn" style="clear: both;"></div>
+                        </div> 
+                        <span class="help-text" >CBN% of test result (as % of weight)</span>
+                    </div> 
+                    <div class="col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <input id="c_strain_cate" type="text" name="c_strain_cate" value="" > 
+                            <label for="c_strain_cate" class="helpertext">Strain Category</label> 
+                            <div id="errorbox_strain_cate" style="clear: both;"></div>
+                        </div>
+                        <span class="help-text" >Strain Category of test result (as % of weight)</span>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class=" col l4 s12 m4 ">
+                        <div class="input-field col l8 m8 s12">
+                            <span class="helpertext" style="color: #888;"><?php print _t('134', 'Photo') ?>&nbsp;</span>&nbsp;<input type="file" name="photo"  id="photo" class="show_preview" data-prev_id="prev_photo">
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div id="prev_photo" class="prev_image"></div>
+                        </div>
+                    </div>
+                    <div class="input-field col l4 s12 m4 ">
+                        <span class="helpertext " style="color: #888;">Tested At&nbsp;</span>
+                        <input id="tested_at" class="datepicker picker__input" name="tested_at" value="" onchange="titleChenage(this);" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="pDate0_root" type="text">
+                        <input type="hidden" name="hid_tested_at" id="hid_tested_at" value=""/>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+
+            </div>
             <ul class="collapsible popout " data-collapsible="accordion">
                 <li>
                     <div class="collapsible-header active"><i class="fa fa-plus-square-o"></i>Cannabinoids</div>
                     <div class="collapsible-body">
 
-                        <div class=" col m4 l4 s12"> 
-                            <div class="input-field"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <!--<span for="thc" class="help-span">THC</span>-->
-                                <input id="c_thc" type="text" name="c_thc" value="" > 
-                                <label for="c_thc" class="helpertext">cannabinoids[THC%]</label> 
-                                <div id="errorbox_thc" style="clear: both;"></div>
 
-                            </div>
-                            <span class="help-text" style="color: #888;" >THC% of test result (as % of weight)</span>
-                        </div>
-                        <div class=" col m4 l4 s12"> 
-                            <div class="input-field"> 
-                                <i class="mdi-action-label prefix  "></i> 
-                                <input id="c_thca" type="text" name="c_thca" value="" > 
-                                <label for="c_thca" class="helpertext">cannabinoids[THCa%]</label> 
-                                <div id="errorbox_thca" style="clear: both;"></div>
-
-                            </div>
-                            <span class="help-text" >THCa% of test result (as % of weight)</span>
-                        </div> 
-                        <!--<div  style="clear: both;"></div>-->
-                        <div class="col m4 l4 s12"> 
-                            <div class="input-field"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <input id="c_cbd" type="text" name="c_cbd" value="" > 
-                                <label for="c_cbd" class="helpertext">cannabinoids[CBD%]</label> 
-                                <div id="errorbox_cbd" style="clear: both;"></div>
-                            </div> 
-                            <span class="help-text" >CBD% of test result (as % of weight)</span>
-                        </div> 
-                        <div  style="clear: both;"></div>
-                        <div class="col m4 l4 s12"> 
-                            <div class="input-field"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <input id="c_cbda" type="text" name="c_cbda" value="" > 
-                                <label for="c_cbda" class="helpertext">cannabinoids[CBDa%]</label> 
-                                <div id="errorbox_cbda" style="clear: both;"></div>
-                            </div> 
-                            <span class="help-text" >CBDa% of test result (as % of weight)</span>
-                        </div> 
-                        <!--<div  style="clear: both;"></div>-->
-                        <div class="col m4 l4 s12"> 
-                            <div class="input-field"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <input id="c_cbn" type="text" name="c_cbn" value="" > 
-                                <label for="c_cbn" class="helpertext">cannabinoids[CBN%]</label> 
-                                <div id="errorbox_cbn" style="clear: both;"></div>
-                            </div> 
-                            <span class="help-text" >CBN% of test result (as % of weight)</span>
-                        </div> 
-                        <div class="col m4 l4 s12"> 
-                            <div class="input-field"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <input id="c_strain_cate" type="text" name="c_strain_cate" value="" > 
-                                <label for="c_strain_cate" class="helpertext">Strain Category</label> 
-                                <div id="errorbox_strain_cate" style="clear: both;"></div>
-                            </div>
-                            <span class="help-text" >Strain Category of test result (as % of weight)</span>
-                        </div>
                         <div  style="clear: both;"></div>
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 
@@ -170,7 +228,16 @@
 
                         <div  style="clear: both;"></div>
 
-
+                        <div class="col m4 l4 s12"> 
+                            <div class="input-field"> 
+                                <i class="mdi-action-label prefix "></i> 
+                                <input id="c_category" type="text" name="c_category" value="" > 
+                                <label for="c_category" class="helpertext"> Category</label> 
+                                <div id="errorbox_c_category" style="clear: both;"></div>
+                            </div>
+                            <span class="help-text" >Category of test result (as % of weight)</span>
+                        </div>
+                        <div  style="clear: both;"></div>
                     </div>
                 </li>
                 <li>
@@ -890,13 +957,52 @@
                     </div>
                 </li>
             </ul>
+            <div class="card">
+               <!--<label>Batch Number:<?= $batchno ?></label>-->
+                <div class="title">API Details</div>
+                <div class="content">
+                    <div class="input-field col l4 s12 m4"> 
+                        <i class="mdi-action-label prefix "></i> 
+                        <!--<span for="thc" class="help-span">THC</span>-->
+                        <input id="listing_id" type="text" name="listing_id" value="" > 
+                        <label for="listing_id" class="helpertext">Listing ID</label> 
+                        <div id="errorbox_listing_id" style="clear: both;"></div>
 
-            <div class="col m12 l12 s12" style="padding-bottom: 1rem;" > 
-                <div class="right"> 
+                    </div>
+                    <div class="input-field col l4 s12 m4"> 
+                        <i class="mdi-action-label prefix "></i> 
+                        <!--<span for="thc" class="help-span">THC</span>-->
+                        <input id="listing_type" type="text" name="listing_type" value="" > 
+                        <label for="listing_type" class="helpertext">Listing Type</label> 
+                        <div id="errorbox_listing_type" style="clear: both;"></div>
+
+                    </div>
+                    <div class="input-field col l4 s12 m4"> 
+                        <span id="dateDiscription"></span>
+                    </div>
+                    <div  style="clear: both;"></div>
+                    <div class=" col m12 l12 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <!--<span for="thc" class="help-span">THC</span>-->
+                            <input id="api_key" type="text" name="api_key" value="" > 
+                            <label for="api_key" class="helpertext">API Key</label> 
+                            <div id="errorbox_api_key" style="clear: both;"></div>
+
+                        </div>
+<!--                        <span class="help-text" style="color: #888;" ></span>-->
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="col m12 l12 s12 right" style="padding: 1rem;" > 
+
+
 
                     <!--<button type = "submit" name = "submit" class = "waves-effect waves-amber green btn-large z-depth-0 z-depth-1-hover"><?php print _t('215', 'Save'); ?></button>-->
-                    <button type ="submit" name="submit" id="submit" class ="waves-effect waves-amber  btn-large z-depth-0 z-depth-1-hover"><?php print _t('215', 'Save'); ?></button>
-                </div> 
+                <button type ="submit" name="submit" id="submit" class =" right waves-effect waves-amber  btn-large z-depth-0 z-depth-1-hover"><?php print _t('215', 'Save'); ?></button>
             </div> 
         </form>
     </div>
@@ -914,7 +1020,7 @@
                             <i class="fa fa-times"></i>
                         </div>-->
         </div>
-        <div class="modal-content flow-text fixframe">
+        <div class="modal-content  fixframe">
 
             <!-- <a class="modal-action modal-close  waves-effect waves-green red-text btn-flat tooltipped" data-position="top" data-delay="50" data-tooltip="Click To Exit" href="#">
                  <i class="mdi-content-clear"></i>
@@ -922,69 +1028,96 @@
             <div id="filecontent" src="" style="height:auto;" frameborder="0" scrolling="yes">
 
                 <div class="card" id="card_basic" >
-                    <!--                    <div class="title">
-                                            <div class="row">
-                                                <i class="fa fa-cab prefix small"></i>&nbsp;
-                                            <span style="font-weight:bold;font-size:16px; ">
-                    <?php print _t('206', 'View Details') ?> 
-                                            </span>
-                    
-                                        </div>      -->
+                    <div class="title">
+
+                        <span style="font-weight:bold;font-size:16px; ">
+                            <?php print _t('206', 'Report') ?> 
+                        </span>
+
+                    </div>      
                     <div class="content" style="min-height: min-content;">
-                        <div class="col m4 l4 s12"> 
-                            <div class="row"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <span for="thc" class="help-span">THC % :</span>
-                                <input id="hidthc" type="hidden" name="hidthc" value=""> 
-                                <label id="lblthc" name="lblthc" class="help-span"></label> 
-                                <!--<div id="errorbox_thc" style=""></div>-->
-                            </div> 
-                        </div> 
-                        <div class="col m4 l4 s12"> 
-                            <div class="row"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <span for="thc" class="help-span">THCA :</span>
-                                <input id="hidthca" type="hidden" name="hidthca" value="" > 
-                                <label id="lblthca" class="help-span"></label> 
-                                <!--<div id="errorbox_thca" style=""></div>-->
-                            </div> 
-                        </div> 
-                        <div class="col m4 l4 s12"> 
-                            <div class="row"> 
-                                <i class="mdi-action-label prefix "></i>
-                                <span for="thc" class="help-span">CBD :</span>
-                                <input id="hidcbd" type="hidden" name="hidcbd" value="" > 
-                                <label id="lblcbd" class="help-span"></label> 
-                                <!--<div id="errorbox_cbd" style=""></div>-->
-                            </div> 
-                        </div> 
-                        <div class="col m4 l4 s12"> 
-                            <div class="row"> 
-                                <i class="mdi-action-label prefix "></i>
-                                <span for="thc" class="help-span">CBDA :</span>
-                                <input id="hidcbda" type="hidden" name="hidcbda" value="" > 
-                                <label id="lblcbda" class="help-span"></label> 
-                                <!--<div id="errorbox_cbda" style=""></div>-->
-                            </div> 
-                        </div> 
-                        <div class="col m4 l4 s12"> 
-                            <div class="row"> 
-                                <i class="mdi-action-label prefix "></i>
-                                <span for="thc" class="help-span">CBN :</span>
-                                <input id="hidcbn" type="hidden" name="hidcbn" value="" > 
-                                <label id="lblcbn" class="help-span"></label> 
-                                <!--<div id="errorbox_cbn" style=""></div>-->
-                            </div> 
-                        </div> 
-                        <div class="col m4 l4 s12" style="padding-bottom: 10px;"> 
-                            <div class="row"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <span for="thc" class="help-span">Strain Category :</span>
-                                <input id="hidstrain_cate" type="hidden" name="hidstrain_cate" value="" > 
-                                <label id="lblstrain_cate" class="help-span"></label> 
-                                <!--<div id="errorbox_strain_cate" style=""></div>-->
-                            </div> 
-                        </div> 
+                        <div class="card"> 
+                            <div class="content">
+                                <div class="col l4 m4 s12">
+                                    <div id="1prev_photo" class="prev_image "></div>
+                                </div>
+                                <div class="col m4 l4 s12"> 
+
+                                <!--<i class="mdi-action-label prefix "></i>--> 
+                                    <span for="hidname" class="help-span">Name :</span>
+                                    <input id="hidname" type="hidden" name="hidname" value=""> 
+                                    <span id="lblname" name="lblname" class="help-span"></span> 
+                                    <!--<div id="errorbox_thc" style=""></div>-->
+
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="title">Cannabinoids</div>
+                            <div class="content">
+                                <div class="row"> 
+                                    <div class="col m4 l4 s12"> 
+
+                                <!--<i class="mdi-action-label prefix "></i>--> 
+                                        <span for="thc" class="help-span">THC % :</span>
+                                        <input id="hidthc" type="hidden" name="hidthc" value=""> 
+                                        <span id="lblthc" name="lblthc" class="help-span"></span> 
+                                        <!--<div id="errorbox_thc" style=""></div>-->
+
+                                    </div> 
+                                    <div class="col m4 l4 s12"> 
+
+                                        <!--<i class="mdi-action-label prefix "></i>--> 
+                                        <span for="thc" class="help-span">THCA :</span>
+                                        <input id="hidthca" type="hidden" name="hidthca" value="" > 
+                                        <span id="lblthca" class="help-span"></span> 
+                                        <!--<div id="errorbox_thca" style=""></div>-->
+
+                                    </div> 
+                                    <div class="col m4 l4 s12"> 
+                                        <!--<div class="row">--> 
+                                        <!--<i class="mdi-action-label prefix "></i>-->
+                                        <span for="thc" class="help-span">CBD :</span>
+                                        <input id="hidcbd" type="hidden" name="hidcbd" value="" > 
+                                        <span id="lblcbd" class="help-span"></span> 
+                                        <!--<div id="errorbox_cbd" style=""></div>-->
+                                        <!--</div>--> 
+                                    </div> 
+                                    <div style="clear: both;"></div>
+                                    <div class="col m4 l4 s12"> 
+                                        <!--<div class="row">--> 
+                                            <!--<i class="mdi-action-label prefix "></i>-->
+                                        <span for="thc" class="help-span">CBDA :</span>
+                                        <input id="hidcbda" type="hidden" name="hidcbda" value="" > 
+                                        <span id="lblcbda" class="help-span"></span> 
+                                        <!--<div id="errorbox_cbda" style=""></div>-->
+                                        <!--</div>--> 
+                                    </div> 
+                                    <div class="col m4 l4 s12"> 
+                                        <!--<div class="row">--> 
+                                            <!--<i class="mdi-action-label prefix "></i>-->
+                                        <span for="thc" class="help-span">CBN :</span>
+                                        <input id="hidcbn" type="hidden" name="hidcbn" value="" > 
+                                        <span id="lblcbn" class="help-span"></span> 
+                                        <!--<div id="errorbox_cbn" style=""></div>-->
+                                        <!--</div>--> 
+                                    </div> 
+                                    <div class="col m4 l4 s12" style="padding-bottom: 10px;"> 
+                                        <!--<div class="row">--> 
+                                            <!--<i class="mdi-action-label prefix "></i>--> 
+                                        <span for="thc" class="help-span">Strain Category :</span>
+                                        <input id="hidstrain_cate" type="hidden" name="hidstrain_cate" value="" > 
+                                        <input id="hidData" type="hidden" name="hidData" value="" > 
+                                        <span id="lblstrain_cate" class="help-span"></span> 
+                                        <!--<div id="errorbox_strain_cate" style=""></div>-->
+                                        <!--</div>--> 
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                       
+
                     </div>
 
                 </div>
@@ -995,7 +1128,7 @@
 
         </div>
         <div class="modal-footer ">
-            <button data-tooltip='Click to Save' name="save"  class="right waves-effect waves-light btn btn-default z-depth-0 z-depth-1-hover tooltipped" type="button" style="margin: 3px 10px 5px 2px;" onclick="SaveData()"><?php print _t('18', 'Confirm') ?></button>
+            <button data-tooltip='Click to Save' name="save"  class="right waves-effect waves-light btn btn-default z-depth-0 z-depth-1-hover tooltipped" type="button" style="margin: 3px 10px 5px 2px;" onclick="SaveData(dataValue, '1')"><?php print _t('18', 'Confirm') ?></button>
 
             <button data-tooltip='Click to Close' name="edit" id="close" class="right modal-close  grey  waves-effect waves-light btn btn-default z-depth-0 z-depth-1-hover tooltipped" type="button" style="margin: 3px 10px 5px 2px;" onclick="Closed()"><?php print _t('179', 'Edit') ?></button>
             <div style="clear: both"></div>
