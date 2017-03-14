@@ -3,10 +3,22 @@
 
 $apiCore = new apiCore();
 $data = array();
-//$data['user_id'] = '162';
-$data['driver_license_image'] = 'abc.png';
-$output_data = $apiCore->doFormCall(API_URL . "Admin/api/userNew/upload_files?id='93'", $data);
-d($output_data);
+$data['listing_id'] = '1';
+$data['listing_type'] = 'demo';
+$data['api_key'] = 'TestApi';
+$data['name'] = 'TestStrain';
+$data['cannabinoids[thc]'] = '0.1';
+$data['cannabinoids[thca]'] = '0.2';
+$data['cannabinoids[cbd]'] = '0.3';
+$data['cannabinoids[cbda]'] = '0.4';
+$data['cannabinoids[cbn]'] = '0.5';
+$data = json_encode($data);
+//$array_test = array('listing_id'=>'1','listing_id'=>'1','listing_id'=>'1');
+$output_data = $apiCore->weedAPICall("https://staging.weedmaps.com/api/web/v1/test_results", $data);
+$output = json_decode($output_data, true);
+//d($output_file);
+echo $output;
+d($output);
 die;
 //$filedata = $_FILES['file']['tmp_name'];
 //$filesize = $_FILES['file']['size'];

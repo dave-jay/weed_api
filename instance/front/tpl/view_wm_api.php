@@ -187,8 +187,8 @@
                             <!--<i class="mdi-action-label prefix "></i>--> 
                             <!--<span for="thc" class="help-span">THC</span>-->
                             <!--<input id="batch_no" type="text" class="txt" data-label="Batch Number" data-class="E"  data-id="txt_batch_no" name="batch_no" value="" >--> 
-                            <label for="batch_no" class="helpertext">Batch Number</label> <br/>
-                            <label id="batch_no" class="helpertext" style="color: #666;font-weight: bold;font-size: 12px; ">Batch Number</label> 
+                            <label for="batch_number" class="helpertext">Batch Number</label> <br/>
+                            <label id="batch_number" class="helpertext" style="color: #666;font-weight: bold;font-size: 12px; ">Batch Number</label> 
                             <div id="errorbox_" style="clear: both;"></div>
 
                         </div>

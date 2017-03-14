@@ -57,8 +57,17 @@ if (isset($_REQUEST['autosave'])) {
             }
         }
     }
+    d($target_file);
     d($doc_file_name);
 //    die;
+//    d($_REQUEST['hid_tested_at']);
+//    die;
+    
+    /* API CALL */
+//    include _PATH . "instance/front/tpl/weedAPICall.php";
+
+
+
     $fields = array();
     $fields['c_thc'] = _escape($_REQUEST['c_thc']);
     $fields['c_thca'] = _escape($_REQUEST['c_thca']);

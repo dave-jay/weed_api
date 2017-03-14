@@ -126,7 +126,7 @@ class apiCore {
         }
         return $output;
     }
-    
+
     public function doFileCallNew($url, $body) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_POST, true);
@@ -135,6 +135,21 @@ class apiCore {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         curl_close($ch);
+        return $output;
+    }
+
+    public function weedAPICall($url, $postfields) {
+        $ch = curl_init();
+//        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        $output = curl_exec($ch);
+        curl_close($ch);
+//        echo $output;
         return $output;
     }
 
