@@ -3,6 +3,13 @@
 if (!isset($_SESSION['user'])) {
     _R('login');
 }
+if (isset($_REQUEST['binddata'])) {
+    $rowID = $_REQUEST['id'];
+    $q1 = qs("select * from tb_form where id='$rowID'");
+//    d($q1);
+    echo json_encode($q1);
+    die;
+}
 if (isset($_REQUEST['autosave'])) {
     $dataAuto = array();
     parse_str($_POST['data'], $dataAuto);

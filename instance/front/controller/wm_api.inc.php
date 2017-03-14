@@ -147,7 +147,9 @@ if (isset($_REQUEST['autosave'])) {
     $fields['s_heptane'] = _escape($_REQUEST['s_heptane']);
     $fields['s_hexane'] = _escape($_REQUEST['s_hexane']);
     $fields['s_pentane'] = _escape($_REQUEST['s_pentane']);
-    $fields['tested_at'] = _escape($_REQUEST['hidtested_at']); // 29 March, 2017;
+    $fields['tested_at'] = _escape($_REQUEST['hid_tested_at']); // 29 March, 2017;
+//    d($_REQUEST['hid_tested_at']);
+//    die;
     $fields['picture_url'] = _escape($doc_file_name['photo']); // photo URL;
     $fields['batch_number'] = _escape($_REQUEST['batch_no']); // 1001
     $fields['name'] = _escape($_REQUEST['name']); // 1001
@@ -155,8 +157,6 @@ if (isset($_REQUEST['autosave'])) {
     $fields['listing_id'] = _escape($_REQUEST['listing_id']); // 1001
     $fields['listing_type'] = _escape($_REQUEST['listing_type']); // 1001
     $fields['api_key'] = _escape($_REQUEST['api_key']); // 1001
-
-
     $chk = qi("tb_form", $fields);
     d($chk);
     if (!empty($chk)) {

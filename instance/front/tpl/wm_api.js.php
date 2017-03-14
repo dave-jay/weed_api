@@ -113,15 +113,12 @@
             } else if (element.attr("name") == "api_key") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_api_key'));
-
             } else if (element.attr("name") == "listing_type") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_listing_type'));
-
             } else if (element.attr("name") == "listing_id") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_listing_id'));
-
             } else if (element.attr("name") == "name") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_name'));
@@ -150,7 +147,8 @@
         var day = (todayTime.getDate());
         var year = (todayTime.getUTCFullYear());
 //        alert(month + "/" + day + "/" + year);
-        $("#hid_tested_at").val(month + "/" + day + "/" + year);
+//        $("#hid_tested_at").val(month + "/" + day + "/" + year);
+        $("#hid_tested_at").val(year + "-" + month + "-" + day);
         $('#dateDiscription' + id).text(month + "/" + day);
     }
     function SaveData(dataValue, x) {
@@ -161,7 +159,6 @@
 //        alert(dataValue);
         if (x == '0') {
             ModalCall(dataValue);
-
         } else {
 //            alert("its call");
             $("#modal1").closeModal();
@@ -198,10 +195,8 @@
     function  ModalCall(dataValue) {
         $("#lblname").text($("#name").val());
         $("#hidname").val($("#name").val());
-
         $("#lblthc").text($("#c_thc").val());
         $("#hidthc").val($("#c_thc").val());
-
         $("#lblthca").text($("#c_thca").val());
         $("#hidthca").val($("#c_thca").val());
         $("#lblcbd").text($("#c_cbd").val());
@@ -214,6 +209,64 @@
         $("#hidstrain_cate").val($("#c_strain_cate").val());
         $("#hidData").val(dataValue);
         $("#modal1").openModal();
+        var obj;
+        $(".txt").each(function () {
+
+            var data_id = $(this).data('id');
+            var data_id_val = $(this).val();
+            var class_id = $(this).data('class');
+            var data_label = $(this).data('label');
+            if (class_id == "E") {
+                if (data_id_val != "" || data_id_val != null) {
+                    $("#E").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">' + data_label + ': </span> <span id="" name="lblname" class="help-span">' + data_id_val + '</span></div>');
+//                    $("#A").html(data_label + "=:" + data_id_val);
+//                    alert(data_label + "=:" + data_id_val);
+                }
+            }
+            if (class_id == "C") {
+                if (data_id_val != "" || data_id_val != null) {
+                    $("#C").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">' + data_label + ': </span> <span id="" name="lblname" class="help-span">' + data_id_val + '</span></div>');
+//                    $("#A").html(data_label + "=:" + data_id_val);
+//                    alert(data_label + "=:" + data_id_val);
+                }
+            }
+            if (class_id == "T") {
+                if (data_id_val != "" || data_id_val != null) {
+                    $("#T").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">' + data_label + ': </span> <span id="" name="lblname" class="help-span">' + data_id_val + '</span></div>');
+//                    $("#A").html(data_label + "=:" + data_id_val);
+//                    alert(data_label + "=:" + data_id_val);
+                }
+            }
+            if (class_id == "P") {
+                if (data_id_val != "" || data_id_val != null) {
+                    $("#P").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">' + data_label + ': </span> <span id="" name="lblname" class="help-span">' + data_id_val + '</span></div>');
+//                    $("#A").html(data_label + "=:" + data_id_val);
+//                    alert(data_label + "=:" + data_id_val);
+                }
+            }
+            if (class_id == "M") {
+                if (data_id_val != "" || data_id_val != null) {
+                    $("#M").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">' + data_label + ': </span> <span id="" name="lblname" class="help-span">' + data_id_val + '</span></div>');
+//                    $("#A").html(data_label + "=:" + data_id_val);
+//                    alert(data_label + "=:" + data_id_val);
+                }
+            }
+            if (class_id == "S") {
+                if (data_id_val != "" || data_id_val != null) {
+                    $("#S").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">' + data_label + ': </span> <span id="" name="lblname" class="help-span">' + data_id_val + '</span></div>');
+//                    $("#A").html(data_label + "=:" + data_id_val);
+//                    alert(data_label + "=:" + data_id_val);
+                }
+            }
+            if (class_id == "A") {
+                if (data_id_val != "" || data_id_val != null) {
+                    $("#A").append('<div class="col l6 m6 s12"><span for="hidname" style="color:#888;" class="help-span">' + data_label + ': </span> <span id="" name="lblname" class="help-span">' + data_id_val + '</span></div>');
+//                    $("#A").html(data_label + "=:" + data_id_val);
+//                    alert(data_label + "=:" + data_id_val);
+                }
+            }
+        });
+
     }
     $(document).ready(function () {
 
