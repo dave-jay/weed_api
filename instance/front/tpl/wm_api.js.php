@@ -19,6 +19,7 @@
             c_cbd: {required: true},
             c_cbda: {required: true},
             c_cbn: {required: true},
+            c_cbg: {required: true},
             c_strain_cate: {required: true},
             photo: {required: true},
             api_key: {required: true},
@@ -57,6 +58,7 @@
             c_cbd: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             c_cbda: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             c_cbn: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
+            c_cbg: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             c_strain_cate: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             api_key: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
             listing_type: {required: '<span style="color:red;font-size:11px; ">This value is required</span>'},
@@ -122,6 +124,9 @@
             } else if (element.attr("name") == "name") {
                 console.log(element.attr("name"));
                 error.insertAfter($('#errorbox_name'));
+            } else if (element.attr("name") == "c_cbg") {
+                console.log(element.attr("name"));
+                error.insertAfter($('#errorbox_c_cbg'));
             } else {
                 error.insertAfter(element);
             }
@@ -176,8 +181,8 @@
                 success: function (r) {
 //                alert(r);
                     Materialize.toast("Record added successfully!", 4000);
-                    location.href = "<?= _U . 'wm_api' ?>";
-                    if (r.success == 1)
+
+                    if (r.success == '1')
                     {
                         Materialize.toast("Record added successfully!", 4000);
                         showWait();
@@ -185,6 +190,7 @@
                     } else {
                         Materialize.toast("Warrning! Please try After Some time", 4000);
                     }
+                    location.href = "<?= _U . 'wm_api' ?>";
                 }
 
             });

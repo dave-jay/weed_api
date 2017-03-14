@@ -282,6 +282,16 @@
                         
                                                     </div>
                                                 </div>-->
+                        <div class="col m4 l4 s12"> 
+                            <!--                                <div class="input-field"> 
+                                                                <i class="mdi-action-label prefix "></i> 
+                                                                <input id="c_cbg" type="text" class="txt" data-label="cannabinoids[CBG%]" data-class="C"  data-id="txt_c_cbg" name="c_cbg" value="" > -->
+                            <label for="c_cbg" class="helpertext">cannabinoids[CBG%]</label><br/> 
+                            <label id="c_cbg" class="helpertext" style="color: #666;font-weight: bold;font-size: 12px; ">cannabinoids[CBG%]</label> 
+                            <div id="errorbox_cbg" style="clear: both;"></div>
+                            <!--                                </div> 
+                                                            <span class="help-text" >CBG% of test result (as % of weight)</span>-->
+                        </div>
                         <div class=" col l4 s12 m4 ">
                             <label class="helpertext" for="tested_at" >Tested At&nbsp;</label><br/>
                             <label class="helpertext" id="tested_at" style="color: #666;font-weight: bold;font-size: 12px; "></label>
@@ -333,16 +343,7 @@
                                                                 <span class="help-text" >CBNa% of test result (as % of weight)</span>-->
                             </div>
                             <div  style="clear: both;"></div>
-                            <div class="col m4 l4 s12"> 
-                                <!--                                <div class="input-field"> 
-                                                                    <i class="mdi-action-label prefix "></i> 
-                                                                    <input id="c_cbg" type="text" class="txt" data-label="cannabinoids[CBG%]" data-class="C"  data-id="txt_c_cbg" name="c_cbg" value="" > -->
-                                <label for="c_cbg" class="helpertext">cannabinoids[CBG%]</label><br/> 
-                                <label id="c_cbg" class="helpertext" style="color: #666;font-weight: bold;font-size: 12px; ">cannabinoids[CBG%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
-                                <!--                                </div> 
-                                                                <span class="help-text" >CBG% of test result (as % of weight)</span>-->
-                            </div>
+
                             <div class="col m4 l4 s12"> 
                                 <!--                                <div class="input-field"> 
                                                                     <i class="mdi-action-label prefix "></i> 
@@ -363,9 +364,6 @@
                                 <!--                                </div> 
                                                                 <span class="help-text" >CBC% of test result (as % of weight)</span>-->
                             </div>
-
-
-                            <div  style="clear: both;"></div>
                             <div class="col m4 l4 s12"> 
                                 <!--                                <div class="input-field"> 
                                                                     <i class="mdi-action-label prefix "></i> 
@@ -376,6 +374,7 @@
                                 <!--                                </div> 
                                                                 <span class="help-text" >CBCa% of test result (as % of weight)</span>-->
                             </div>
+                            <div  style="clear: both;"></div>
                             <div class="col m4 l4 s12"> 
                                 <!--                                <div class="input-field"> 
                                                                     <i class="mdi-action-label prefix "></i> 
@@ -396,9 +395,6 @@
                                                                 </div> 
                                                                 <span class="help-text" >CBLa% of test result (as % of weight)</span>-->
                             </div>
-
-                            <div  style="clear: both;"></div>
-
                             <div class="col m4 l4 s12"> 
                                 <!--                                <div class="input-field"> 
                                                                     <i class="mdi-action-label prefix "></i> 

@@ -116,6 +116,21 @@
                         <span class="help-text" >Strain Category of test result (as % of weight)</span>
                     </div>
                     <div style="clear: both;"></div>
+                    <div class="col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <input id="c_cbg" type="text" class="txt" data-label="cannabinoids[CBG%]" data-class="C"  data-id="txt_c_cbg" name="c_cbg" value="" > 
+                            <label for="c_cbg" class="helpertext">cannabinoids[CBG%]</label> 
+                            <div id="errorbox_c_cbg" style="clear: both;"></div>
+                        </div> 
+                        <span class="help-text" >CBG% of test result (as % of weight)</span>
+                    </div>
+
+                    <div class="input-field col l4 s12 m4 ">
+                        <span class="helpertext " style="color: #888;">Tested At&nbsp;</span>
+                        <input id="tested_at" class="datepicker picker__input" name="tested_at" value="" onchange="titleChenage(this);" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="pDate0_root" type="text" class="txt" data-label="" data-class="C"  data-id="txt_">
+                        <input type="hidden" name="hid_tested_at" id="hid_tested_at" value=""/>
+                    </div>
                     <div class=" col l4 s12 m4 ">
                         <div class="input-field col l8 m8 s12">
                             <span class="helpertext" style="color: #888;"><?php print _t('134', 'Photo') ?>&nbsp;</span>&nbsp;<input type="file" name="photo"  id="photo" class="show_preview" data-prev_id="prev_photo">
@@ -123,11 +138,6 @@
                         <div class="col l4 m4 s12">
                             <div id="prev_photo" class="prev_image"></div>
                         </div>
-                    </div>
-                    <div class="input-field col l4 s12 m4 ">
-                        <span class="helpertext " style="color: #888;">Tested At&nbsp;</span>
-                        <input id="tested_at" class="datepicker picker__input" name="tested_at" value="" onchange="titleChenage(this);" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="pDate0_root" type="text" class="txt" data-label="" data-class="C"  data-id="txt_">
-                        <input type="hidden" name="hid_tested_at" id="hid_tested_at" value=""/>
                     </div>
                     <div style="clear: both;"></div>
                 </div>
@@ -145,7 +155,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_thcv" type="text" class="txt" data-label="cannabinoids[THCv%]" data-class="C"  data-id="txt_c_thcv" name="c_thcv" value="" > 
                                 <label for="c_thcv" class="helpertext">cannabinoids[THCv%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >THCv% of test result (as % of weight)</span>
                         </div>
@@ -154,7 +164,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_cbdv" type="text" class="txt" data-label="cannabinoids[CBDv%]" data-class="C"  data-id="txt_c_cbdv" name="c_cbdv" value="" > 
                                 <label for="c_cbdv" class="helpertext">cannabinoids[CBDv%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >CBDv% of test result (as % of weight)</span>
                         </div>
@@ -163,26 +173,18 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_cbna" type="text" class="txt" data-label="cannabinoids[CBNa%]" data-class="C"  data-id="txt_c_cbna" name="c_cbna" value="" > 
                                 <label for="c_cbna" class="helpertext">cannabinoids[CBNa%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >CBNa% of test result (as % of weight)</span>
                         </div>
                         <div  style="clear: both;"></div>
-                        <div class="col m4 l4 s12"> 
-                            <div class="input-field"> 
-                                <i class="mdi-action-label prefix "></i> 
-                                <input id="c_cbg" type="text" class="txt" data-label="cannabinoids[CBG%]" data-class="C"  data-id="txt_c_cbg" name="c_cbg" value="" > 
-                                <label for="c_cbg" class="helpertext">cannabinoids[CBG%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
-                            </div> 
-                            <span class="help-text" >CBG% of test result (as % of weight)</span>
-                        </div>
+
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_cbga" type="text" class="txt" data-label="cannabinoids[CBGa%]" data-class="C"  data-id="txt_c_cbga" name="c_cbga" value="" > 
                                 <label for="c_cbga" class="helpertext">cannabinoids[CBGa%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >CBGa% of test result (as % of weight)</span>
                         </div>
@@ -191,28 +193,29 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_cbc" type="text" class="txt" data-label="cannabinoids[CBC%]" data-class="C"  data-id="txt_c_cbc" name="c_cbc" value="" > 
                                 <label for="c_cbc" class="helpertext">cannabinoids[CBC%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >CBC% of test result (as % of weight)</span>
                         </div>
 
 
-                        <div  style="clear: both;"></div>
+                       
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_cbca" type="text" class="txt" data-label="cannabinoids[CBCa%]" data-class="C"  data-id="txt_c_cbca" name="c_cbca" value="" > 
                                 <label for="c_cbca" class="helpertext">cannabinoids[CBCa%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >CBCa% of test result (as % of weight)</span>
                         </div>
+                         <div  style="clear: both;"></div>
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_cbl" type="text" class="txt" data-label="cannabinoids[CBL%]" data-class="C"  data-id="txt_c_cbl" name="c_cbl" value="" > 
                                 <label for="c_cbl" class="helpertext">cannabinoids[CBL%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >CBL% of test result (as % of weight)</span>
                         </div>
@@ -221,12 +224,12 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="c_cbla" type="text" class="txt" data-label="cannabinoids[CBLa%]" data-class="C"  data-id="txt_c_cbla" name="c_cbla" value="" > 
                                 <label for="c_cbla" class="helpertext">cannabinoids[CBLa%]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >CBLa% of test result (as % of weight)</span>
                         </div>
 
-                        <div  style="clear: both;"></div>
+                      
 
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 
@@ -311,7 +314,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_terpinolene" type="text" class="txt" data-label="terpenes[terpinolene]" data-class="T"  data-id="txt_t_terpinolene" name="t_terpinolene" value="" > 
                                 <label for="t_terpinolene" class="helpertext">terpenes[terpinolene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Terpinolene (as % of weight)</span>
                         </div>
@@ -320,7 +323,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_terpineol" type="text" class="txt" data-label="terpenes[terpineol]" data-class="T"  data-id="txt_t_terpineol" name="t_terpineol" value="" > 
                                 <label for="t_terpineol" class="helpertext">terpenes[terpineol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Terpineol (as % of weight)</span>
                         </div>
@@ -329,7 +332,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_valencene" type="text" class="txt" data-label="terpenes[valencene]" data-class="T"  data-id="txt_t_valencene" name="t_valencene" value="" > 
                                 <label for="t_valencene" class="helpertext">terpenes[valencene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Valencene (as % of weight)</span>
                         </div>
@@ -339,7 +342,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_beta_caryophyllene" type="text" class="txt" data-label="terpenes [beta_caryophyllene]" data-class="T"  data-id="txt_t_beta_caryophyllene" name="t_beta_caryophyllene" value="" > 
                                 <label for="t_beta_caryophyllene" class="helpertext">terpenes [beta_caryophyllene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >beta Caryophyllene (as % of weight)</span>
                         </div>
@@ -348,7 +351,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_caryophyllene" type="text" class="txt" data-label="terpenes[caryophyllene]" data-class="T"  data-id="txt_t_caryophyllene" name="t_caryophyllene" value="" > 
                                 <label for="t_caryophyllene" class="helpertext">terpenes[caryophyllene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Caryophyllene (as % of weight)</span>
                         </div>
@@ -357,7 +360,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_geraniol" type="text" class="txt" data-label="terpenes[geraniol]" data-class="T"  data-id="txt_t_geraniol" name="t_geraniol" value="" > 
                                 <label for="t_geraniol" class="helpertext">terpenes[geraniol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Geraniol (as % of weight)</span>
                         </div>
@@ -369,7 +372,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_alpha_humulene" type="text" class="txt" data-label="terpenes[alpha_humulene]" data-class="T"  data-id="txt_t_alpha_humulene" name="t_alpha_humulene" value="" > 
                                 <label for="t_alpha_humulene" class="helpertext">terpenes[alpha_humulene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >alpha Humulene (as % of weight)</span>
                         </div>
@@ -378,7 +381,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_alpha_phellandrene" type="text" class="txt" data-label="terpenes[alpha_phellandrene]" data-class="T"  data-id="txt_t_alpha_phellandrene" name="t_alpha_phellandrene" value="" > 
                                 <label for="t_alpha_phellandrene" class="helpertext">terpenes[alpha_phellandrene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >alpha Phellandrene (as % of weight)</span>
                         </div>
@@ -387,7 +390,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_delta_3_carene" type="text" class="txt" data-label="terpenes[delta_3_carene]" data-class="T"  data-id="txt_t_delta_3_carene" name="t_delta_3_carene" value="" > 
                                 <label for="t_delta_3_carene" class="helpertext">terpenes[delta_3_carene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >delta 3 Carene (as % of weight)</span>
                         </div>
@@ -459,7 +462,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_camphene" type="text" class="txt" data-label="terpenes[camphene]" data-class="T"  data-id="txt_t_camphene" name="t_camphene" value="" > 
                                 <label for="t_camphene" class="helpertext">terpenes[camphene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Camphene (as % of weight)</span>
                         </div>
@@ -468,7 +471,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_sabinene" type="text" class="txt" data-label="terpenes[sabinene]" data-class="T"  data-id="txt_t_sabinene" name="t_sabinene" value="" > 
                                 <label for="t_sabinene" class="helpertext">terpenes[sabinene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Sabinene (as % of weight)</span>
                         </div>
@@ -477,7 +480,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_camphor" type="text" class="txt" data-label="terpenes[camphor]" data-class="T"  data-id="txt_t_camphor" name="t_camphor" value="" > 
                                 <label for="t_camphor" class="helpertext">terpenes[camphor]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Camphor (as % of weight)</span>
                         </div>
@@ -487,7 +490,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_isoborneol" type="text" class="txt" data-label="terpenes[isoborneol]" data-class="T"  data-id="txt_t_isoborneol" name="t_isoborneol" value="" > 
                                 <label for="t_isoborneol" class="helpertext">terpenes[isoborneol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Isoborneol (as % of weight)</span>
                         </div>
@@ -496,7 +499,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_menthol" type="text" class="txt" data-label="terpenes[menthol]" data-class="T"  data-id="txt_t_menthol" name="t_menthol" value="" > 
                                 <label for="t_menthol" class="helpertext">terpenes[menthol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Menthol (as % of weight)</span>
                         </div>
@@ -505,7 +508,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_alpha_cedrene" type="text" class="txt" data-label="terpenes[alpha_cedrene]" data-class="T"  data-id="txt_t_alpha_cedrene" name="t_alpha_cedrene" value="" > 
                                 <label for="t_alpha_cedrene" class="helpertext">terpenes[alpha_cedrene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >alpha Cedrene (as % of weight)</span>
                         </div>
@@ -517,7 +520,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_nerolidol" type="text" class="txt" data-label="terpenes[nerolidol]" data-class="T"  data-id="txt_t_nerolidol" name="t_nerolidol" value="" > 
                                 <label for="t_nerolidol" class="helpertext">terpenes[nerolidol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Nerolidol (as % of weight)</span>
                         </div>
@@ -526,7 +529,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_eucalyptol" type="text" class="txt" data-label="terpenes[eucalyptol]" data-class="T"  data-id="txt_t_eucalyptol" name="t_eucalyptol" value="" > 
                                 <label for="t_eucalyptol" class="helpertext">terpenes[eucalyptol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Eucalyptol (as % of weight)</span>
                         </div>
@@ -535,7 +538,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_geranyl" type="text" class="txt" data-label="terpenes[geranyl]" data-class="T"  data-id="txt_t_geranyl" name="t_geranyl" value="" > 
                                 <label for="t_geranyl" class="helpertext">terpenes[geranyl]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Geranyl (as % of weight)</span>
                         </div>
@@ -546,7 +549,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_acetate" type="text" class="txt" data-label="terpenes[acetate]" data-class="T"  data-id="txt_t_acetate" name="t_acetate" value="" > 
                                 <label for="t_acetate" class="helpertext">terpenes[acetate]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Acetate (as % of weight)</span>
                         </div>
@@ -555,7 +558,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_guaiol" type="text" class="txt" data-label="terpenes[guaiol]" data-class="T"  data-id="txt_t_guaiol" name="t_guaiol" value="" > 
                                 <label for="t_guaiol" class="helpertext">terpenes[guaiol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Guaiol (as % of weight)</span>
                         </div>
@@ -564,7 +567,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_phytol" type="text" class="txt" data-label="terpenes[phytol]" data-class="T"  data-id="txt_t_phytol" name="t_phytol" value="" > 
                                 <label for="t_phytol" class="helpertext">terpenes[phytol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Phytol (as % of weight)</span>
                         </div>
@@ -574,7 +577,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_citronellol" type="text" class="txt" data-label="terpenes[citronellol]" data-class="T"  data-id="txt_t_citronellol" name="t_citronellol" value="" > 
                                 <label for="t_citronellol" class="helpertext">terpenes[citronellol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Citronellol (as % of weight)</span>
                         </div>
@@ -583,7 +586,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_p_cymene" type="text" class="txt" data-label="terpenes[p_cymene]" data-class="T"  data-id="txt_t_p_cymene" name="t_p_cymene" value="" > 
                                 <label for="t_p_cymene" class="helpertext">terpenes[p_cymene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >p Cymene (as % of weight)</span>
                         </div>
@@ -592,7 +595,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_isopulegol" type="text" class="txt" data-label="terpenes[isopulegol]" data-class="T"  data-id="txt_t_isopulegol" name="t_isopulegol" value="" > 
                                 <label for="t_isopulegol" class="helpertext">terpenes[isopulegol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Isopulegol (as % of weight)</span>
                         </div>
@@ -602,7 +605,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="t_pulegone" type="text" class="txt" data-label="terpenes[pulegone]" data-class="T"  data-id="txt_t_pulegone" name="t_pulegone" value="" > 
                                 <label for="t_pulegone" class="helpertext">terpenes[pulegone]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Pulegone (as % of weight)</span>
                         </div>
@@ -681,7 +684,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="p_abamectin" type="text" class="txt" data-label="pesticides[abamectin]" data-class="P"  data-id="txt_p_abamectin" name="p_abamectin" value="" > 
                                 <label for="p_abamectin" class="helpertext">pesticides[abamectin]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Abamectin</span>
                         </div>
@@ -690,7 +693,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="p_bifenazate" type="text" class="txt" data-label="pesticides[bifenazate]" data-class="P"  data-id="txt_p_bifenazate" name="p_bifenazate" value="" > 
                                 <label for="p_bifenazate" class="helpertext">pesticides[bifenazate]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Bifenazate</span>
                         </div>
@@ -699,7 +702,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="p_daminozide" type="text" class="txt" data-label="pesticides[daminozide]" data-class="P"  data-id="txt_p_daminozide" name="p_daminozide" value="" > 
                                 <label for="p_daminozide" class="helpertext">pesticides[daminozide]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Daminozide</span>
                         </div>
@@ -709,7 +712,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="p_fenoxycarb" type="text" class="txt" data-label="pesticides[fenoxycarb]" data-class="P"  data-id="txt_p_fenoxycarb" name="p_fenoxycarb" value="" > 
                                 <label for="p_fenoxycarb" class="helpertext">pesticides[fenoxycarb]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Fenoxycarb</span>
                         </div>
@@ -718,7 +721,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="p_myclobutanil" type="text" class="txt" data-label="pesticides[myclobutanil]" data-class="P"  data-id="txt_p_myclobutanil" name="p_myclobutanil" value="" > 
                                 <label for="p_myclobutanil" class="helpertext">pesticides[myclobutanil]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Myclobutanil</span>
                         </div>
@@ -727,7 +730,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="p_paclobutrazol" type="text" class="txt" data-label="pesticides[paclobutrazol]" data-class="P"  data-id="txt_p_paclobutrazol" name="p_paclobutrazol" value="" > 
                                 <label for="p_paclobutrazol" class="helpertext">pesticides[paclobutrazol]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Paclobutrazol</span>
                         </div>
@@ -744,7 +747,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="m_aerobic_plate_count" type="text" class="txt" data-label="microbiological [aerobic_plate_count]" data-class="M"  data-id="txt_m_aerobic_plate_count" name="m_aerobic_plate_count" value="" > 
                                 <label for="m_aerobic_plate_count" class="helpertext">microbiological [aerobic_plate_count]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Total Aerobic Plate Count (in cfu/g)</span>
                         </div>
@@ -753,7 +756,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="m_pseudomonas" type="text" class="txt" data-label="microbiological[pseudomonas]" data-class="M"  data-id="txt_m_pseudomonas" name="m_pseudomonas" value="" > 
                                 <label for="m_pseudomonas" class="helpertext">microbiological[pseudomonas]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Pseudomonas (in cfu/g)</span>
                         </div>
@@ -762,7 +765,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="m_coliforms" type="text" class="txt" data-label="microbiological[coliforms]" data-class="M"  data-id="txt_m_coliforms" name="m_coliforms" value="" > 
                                 <label for="m_coliforms" class="helpertext">microbiological[coliforms]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Coliforms (in cfu/g)</span>
                         </div>
@@ -772,7 +775,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="m_e_coli" type="text" class="txt" data-label="microbiological[e_coli]" data-class="M"  data-id="txt_m_e_coli" name="m_e_coli" value="" > 
                                 <label for="m_e_coli" class="helpertext">microbiological[e_coli]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >E Coli (in cfu/g)</span>
                         </div>
@@ -781,7 +784,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="m_salmonella" type="text" class="txt" data-label="microbiological[salmonella]" data-class="M"  data-id="txt_m_salmonella" name="m_salmonella" value="" > 
                                 <label for="m_salmonella" class="helpertext">microbiological[salmonella]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Salmonella (in cfu/g)</span>
                         </div>
@@ -860,7 +863,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_dimethylbutane" type="text" class="txt" data-label="solvents[dimethylbutane]" data-class="S"  data-id="txt_s_dimethylbutane" name="s_dimethylbutane" value="" > 
                                 <label for="s_dimethylbutane" class="helpertext">solvents[dimethylbutane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >2,2-Dimethylbutane (in ppm)</span>
                         </div>
@@ -869,7 +872,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_2_methylpentane" type="text" class="txt" data-label="solvents[2_methylpentane]" data-class="S"  data-id="txt_s_2_methylpentane" name="s_2_methylpentane" value="" > 
                                 <label for="s_2_methylpentane" class="helpertext">solvents[2_methylpentane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >2-Methylpentane (in ppm)</span>
                         </div>
@@ -878,7 +881,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_3_methylpentane" type="text" class="txt" data-label="solvents[3_methylpentane]" data-class="S"  data-id="txt_s_3_methylpentane" name="s_3_methylpentane" value="" > 
                                 <label for="s_3_methylpentane" class="helpertext">solvents[3_methylpentane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >3-Methylpentane (in ppm)</span>
                         </div>
@@ -888,7 +891,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_cyclohexane_benzene" type="text" class="txt" data-label="solvents[cyclohexane_benzene]" data-class="S"  data-id="txt_s_cyclohexane_benzene" name="s_cyclohexane_benzene" value="" > 
                                 <label for="s_cyclohexane_benzene" class="helpertext">solvents[cyclohexane_benzene]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Cyclohexane + Benzene (in ppm)</span>
                         </div>
@@ -897,7 +900,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_isopentane" type="text" class="txt" data-label="solvents[isopentane]" data-class="S"  data-id="txt_s_isopentane" name="s_isopentane" value="" > 
                                 <label for="s_isopentane" class="helpertext">solvents[isopentane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Isopentane (in ppm)</span>
                         </div>
@@ -906,7 +909,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_neopentane" type="text" class="txt" data-label="solvents[neopentane]" data-class="S"  data-id="txt_s_neopentane" name="s_neopentane" value="" > 
                                 <label for="s_neopentane" class="helpertext">solvents[neopentane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Neopentane (in ppm)</span>
                         </div>
@@ -918,7 +921,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_butane" type="text" class="txt" data-label="solvents[butane]" data-class="S"  data-id="txt_s_butane" name="s_butane" value="" > 
                                 <label for="s_butane" class="helpertext">solvents[butane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Butane (in ppm)</span>
                         </div>
@@ -927,7 +930,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_heptane" type="text" class="txt" data-label="solvents[heptane]" data-class="S"  data-id="txt_s_heptane" name="s_heptane" value="" > 
                                 <label for="s_heptane" class="helpertext">solvents[heptane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Heptane (in ppm)</span>
                         </div>
@@ -936,7 +939,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_hexane" type="text" class="txt" data-label="solvents[hexane]" data-class="S"  data-id="txt_s_hexane" name="s_hexane" value="" > 
                                 <label for="s_hexane" class="helpertext">solvents[hexane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Hexane (in ppm)</span>
                         </div>
@@ -947,7 +950,7 @@
                                 <i class="mdi-action-label prefix "></i> 
                                 <input id="s_pentane" type="text" class="txt" data-label="solvents[pentane]" data-class="S"  data-id="txt_s_pentane" name="s_pentane" value="" > 
                                 <label for="s_pentane" class="helpertext">solvents[pentane]</label> 
-                                <div id="errorbox_cbg" style="clear: both;"></div>
+                                <div id="errorbox_" style="clear: both;"></div>
                             </div> 
                             <span class="help-text" >Pentane (in ppm)</span>
                         </div>
