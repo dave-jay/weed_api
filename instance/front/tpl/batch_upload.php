@@ -25,10 +25,15 @@
 </style>
 <div class="card-panel" style="">
     <div class="row " style="margin:0px;padding: 1rem; ">
+        <?php
+//        d($_SESSION['success']);
+//        d($_SESSION['msg']);
+//        d($exist);
+        ?>
         <div class="col s12 m12 l12">
             <form action="batch_upload" method="post" enctype="multipart/form-data" id="importFrm">
                 <label>Upload CSV File:</label>
-                <input type="file" name="file" />
+                <input type="file" name="file" required/>
                 <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
             </form>
 

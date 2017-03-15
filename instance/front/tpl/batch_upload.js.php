@@ -288,9 +288,32 @@
 
 <?php if ($success == "1") { ?>
             Materialize.toast('<?= $msg; ?>', 4000);
+
+
 <?php } ?>
 <?php if ($success == "-1") { ?>
             Materialize.toast('<?= $msg; ?>', 4000);
+<?php } ?>
+<?php
+if ($_SESSION['success'] == "1") {
+    $_SESSION['success'] = '0';
+    ?>
+            Materialize.toast('<?= $_SESSION['msg']; ?>', 4000);
+
+
+<?php }
+?>
+<?php
+if ($_SESSION['success'] == "-1") {
+    $_SESSION['success'] = '0';
+    ?>
+            Materialize.toast('<?= $_SESSION['msg']; ?>', 4000);
+<?php } ?>
+<?php
+if ($_SESSION['success'] == "3") {
+    $_SESSION['success'] = '0';
+    ?>
+            Materialize.toast('<?= $_SESSION['msg']; ?>', 4000);
 <?php } ?>
         //$("#doc_backgroud_check,#doc_non_owner,#photo_1, #photo_2, #photo_3,#doc_birth_cert,#doc_melli,#doc_insurance_cert,#doc_vehicle_card").on("change", function()
         $("body").on("change", ".show_preview", function ()

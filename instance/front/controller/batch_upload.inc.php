@@ -63,7 +63,6 @@ if (isset($_REQUEST['importSubmit'])) {
             for ($c = 0; $c < $num; $c++) {
                 $col[$c] = $data[$c];
             }
-
             $col1 = $col[0];
             $col2 = $col[1];
             $col3 = $col[2];
@@ -274,18 +273,30 @@ if (isset($_REQUEST['importSubmit'])) {
 //        $s = mysql_query($query, $connect);
 //        $exist = qs("select ID from csvtbl where ID='$col1'");
             $exist = qs("select id from tb_form where id='$col1'");
-            if (!empty($exist['id'])) {
-//                d($exist);
+            if ($num < 98) {
+                $_SESSION['success'] = '1';
+                $_SESSION['msg'] = "Declined!, File having fewer columns!";
             } else {
-                $s = qi("tb_form", $fields);
-                if ($s > 1) {
-                    $_SESSION['success'] = '1';
-                    $_SESSION['msg'] = " File updated successfully!";
+                if (!empty($exist['id'])) {
+                    $_SESSION['success'] = '3';
+                    $_SESSION['msg'] = "Accepted!, But File have Some duplicated Value!";
+//                d($exist);
                 } else {
-                    $_SESSION['success'] = '-1';
-                    $_SESSION['msg'] = " File Not successfully!";
+                    $s = qi("tb_form", $fields);
+                    if (!empty($s)) {
+//                    $success = '1';
+//                    $msg = " File updated successfully!";
+                        $_SESSION['success'] = '1';
+                        $_SESSION['msg'] = "Accepted!, File uploaded successfully!";
+//                        $msg = " File updated successfully!";
+                    } else {
+//                    $success = '-1';
+//                    $msg = "File Not updated successfully!";
+
+                        $_SESSION['success'] = '-1';
+                        $_SESSION['msg'] = "Declined! File Not uploaded!";
+                    }
                 }
-//                d($exist['id']);
             }
         }
         fclose($handle);
