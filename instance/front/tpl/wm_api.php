@@ -46,15 +46,24 @@
                         <div id="errorbox_" style="clear: both;"></div>
 
                     </div>
-                    <div class="input-field col l4 s12 m4"> 
+                    <div class="input-field col l4 s12 m4 ">
                         <i class="mdi-action-label prefix "></i> 
-                        <!--<span for="thc" class="help-span">THC</span>-->
-                        <input id="menu_item_id" type="text" class="txt" data-label="Weedmaps Menu Item ID" data-class="E"  data-id="txt_menu_item_id" name="menu_item_id" value="" > 
-                        <label for="menu_item_id" class="helpertext">Weedmaps Menu Item ID</label> 
-                        <div id="errorbox_" style="clear: both;"></div>
-
+                        <input id="tested_at" class="datepicker picker__input" name="tested_at" value="" onchange="titleChenage(this);" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="pDate0_root" type="text" class="txt" data-label="" data-class="C"  data-id="txt_">
+                        <label class="helpertext "  >Tested On&nbsp;</label>
+                        <input type="hidden" name="hid_tested_at" id="hid_tested_at" value=""/>
                     </div>
+
                     <div  style="clear: both;"></div>
+                    <div class=" col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix  "></i> 
+                            <input id="c_thca" type="text" class="txt" data-label="cannabinoids[THCa%]" data-class="C"  data-id="txt_c_thca" name="c_thca" value="" > 
+                            <label for="c_thca" class="helpertext">cannabinoids[THCa%]</label> 
+                            <div id="errorbox_thca" style="clear: both;"></div>
+
+                        </div>
+                        <span class="help-text" >THCa% of test result (as % of weight)</span>
+                    </div> 
                     <div class=" col m4 l4 s12"> 
                         <div class="input-field"> 
                             <i class="mdi-action-label prefix "></i> 
@@ -66,27 +75,8 @@
                         </div>
                         <span class="help-text" style="color: #888;" >THC% of test result (as % of weight)</span>
                     </div>
-                    <div class=" col m4 l4 s12"> 
-                        <div class="input-field"> 
-                            <i class="mdi-action-label prefix  "></i> 
-                            <input id="c_thca" type="text" class="txt" data-label="cannabinoids[THCa%]" data-class="C"  data-id="txt_c_thca" name="c_thca" value="" > 
-                            <label for="c_thca" class="helpertext">cannabinoids[THCa%]</label> 
-                            <div id="errorbox_thca" style="clear: both;"></div>
 
-                        </div>
-                        <span class="help-text" >THCa% of test result (as % of weight)</span>
-                    </div> 
                     <!--<div  style="clear: both;"></div>-->
-                    <div class="col m4 l4 s12"> 
-                        <div class="input-field"> 
-                            <i class="mdi-action-label prefix "></i> 
-                            <input id="c_cbd" type="text" class="txt" data-label="cannabinoids[CBD%]" data-class="C"  data-id="txt_c_cbd" name="c_cbd" value="" > 
-                            <label for="c_cbd" class="helpertext">cannabinoids[CBD%]</label> 
-                            <div id="errorbox_cbd" style="clear: both;"></div>
-                        </div> 
-                        <span class="help-text" >CBD% of test result (as % of weight)</span>
-                    </div> 
-                    <div  style="clear: both;"></div>
                     <div class="col m4 l4 s12"> 
                         <div class="input-field"> 
                             <i class="mdi-action-label prefix "></i> 
@@ -96,26 +86,16 @@
                         </div> 
                         <span class="help-text" >CBDa% of test result (as % of weight)</span>
                     </div> 
-                    <!--<div  style="clear: both;"></div>-->
+                    <div  style="clear: both;"></div>
                     <div class="col m4 l4 s12"> 
                         <div class="input-field"> 
                             <i class="mdi-action-label prefix "></i> 
-                            <input id="c_cbn" type="text" class="txt" data-label="cannabinoids[CBN%]" data-class="C"  data-id="txt_c_cbn" name="c_cbn" value="" > 
-                            <label for="c_cbn" class="helpertext">cannabinoids[CBN%]</label> 
-                            <div id="errorbox_cbn" style="clear: both;"></div>
+                            <input id="c_cbd" type="text" class="txt" data-label="cannabinoids[CBD%]" data-class="C"  data-id="txt_c_cbd" name="c_cbd" value="" > 
+                            <label for="c_cbd" class="helpertext">cannabinoids[CBD%]</label> 
+                            <div id="errorbox_cbd" style="clear: both;"></div>
                         </div> 
-                        <span class="help-text" >CBN% of test result (as % of weight)</span>
+                        <span class="help-text" >CBD% of test result (as % of weight)</span>
                     </div> 
-                    <div class="col m4 l4 s12"> 
-                        <div class="input-field"> 
-                            <i class="mdi-action-label prefix "></i> 
-                            <input id="c_strain_cate" type="text" class="txt" data-label="Strain Category" data-class="C"  data-id="txt_c_strain_cate" name="c_strain_cate" value="" > 
-                            <label for="c_strain_cate" class="helpertext">Strain Category</label> 
-                            <div id="errorbox_strain_cate" style="clear: both;"></div>
-                        </div>
-                        <span class="help-text" >Strain Category of test result (as % of weight)</span>
-                    </div>
-                    <div style="clear: both;"></div>
                     <div class="col m4 l4 s12"> 
                         <div class="input-field"> 
                             <i class="mdi-action-label prefix "></i> 
@@ -126,11 +106,37 @@
                         <span class="help-text" >CBG% of test result (as % of weight)</span>
                     </div>
 
-                    <div class="input-field col l4 s12 m4 ">
-                        <span class="helpertext " style="color: #888;">Tested At&nbsp;</span>
-                        <input id="tested_at" class="datepicker picker__input" name="tested_at" value="" onchange="titleChenage(this);" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="pDate0_root" type="text" class="txt" data-label="" data-class="C"  data-id="txt_">
-                        <input type="hidden" name="hid_tested_at" id="hid_tested_at" value=""/>
+                    <!--<div  style="clear: both;"></div>-->
+                    <div class="col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <input id="c_cbn" type="text" class="txt" data-label="cannabinoids[CBN%]" data-class="C"  data-id="txt_c_cbn" name="c_cbn" value="" > 
+                            <label for="c_cbn" class="helpertext">cannabinoids[CBN%]</label> 
+                            <div id="errorbox_cbn" style="clear: both;"></div>
+                        </div> 
+                        <span class="help-text" >CBN% of test result (as % of weight)</span>
+                    </div> 
+
+                    <div style="clear: both;"></div>
+                    <div class="col m4 l4 s12"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <input id="c_strain_cate" type="text" class="txt" data-label="Strain Category" data-class="C"  data-id="txt_c_strain_cate" name="c_strain_cate" value="" > 
+                            <label for="c_strain_cate" class="helpertext">Strain Category</label> 
+                            <div id="errorbox_strain_cate" style="clear: both;"></div>
+                        </div>
+                        <span class="help-text" >Strain Category of test result (as % of weight)</span>
                     </div>
+                    <div class="input-field col l4 s12 m4"> 
+                        <div class="input-field"> 
+                            <i class="mdi-action-label prefix "></i> 
+                            <!--<span for="thc" class="help-span">THC</span>-->
+                            <input id="menu_item_id" type="text" class="txt" data-label="Weedmaps Menu Item ID" data-class="E"  data-id="txt_menu_item_id" name="menu_item_id" value="" > 
+                            <label for="menu_item_id" class="helpertext">Weedmaps Menu Item ID</label> 
+                            <div id="errorbox_" style="clear: both;"></div>
+                        </div>
+                    </div>
+
                     <div class=" col l4 s12 m4 ">
                         <div class="input-field col l8 m8 s12">
                             <span class="helpertext" style="color: #888;"><?php print _t('134', 'Photo') ?>&nbsp;</span>&nbsp;<input type="file" name="photo"  id="photo" class="show_preview" data-prev_id="prev_photo">
@@ -199,7 +205,7 @@
                         </div>
 
 
-                       
+
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 
                                 <i class="mdi-action-label prefix "></i> 
@@ -209,7 +215,7 @@
                             </div> 
                             <span class="help-text" >CBCa% of test result (as % of weight)</span>
                         </div>
-                         <div  style="clear: both;"></div>
+                        <div  style="clear: both;"></div>
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 
                                 <i class="mdi-action-label prefix "></i> 
@@ -229,7 +235,7 @@
                             <span class="help-text" >CBLa% of test result (as % of weight)</span>
                         </div>
 
-                      
+
 
                         <div class="col m4 l4 s12"> 
                             <div class="input-field"> 

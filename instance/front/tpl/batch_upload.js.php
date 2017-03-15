@@ -3,15 +3,15 @@
 <script type="text/javascript">
 //    $("#submit").on("click", function () {
 //        {
-////            $("#wm_api_change").submit();
-////            if ($("#wm_api_change").valid() == true) {
+////            $("#batch_upload_change").submit();
+////            if ($("#batch_upload_change").valid() == true) {
 //            $("#modal1").openModal();
 ////            }
 ////            alert("click on submit");
 //        }
 //    });
     var dataValue;
-    $("#wm_api_change").validate({
+    $("#batch_upload_change").validate({
         ignore: [],
         rules: {
             c_thc: {required: true},
@@ -20,7 +20,7 @@
             c_cbda: {required: true},
             c_cbn: {required: true},
             c_cbg: {required: true},
-//            c_strain_cate: {required: true},
+            c_strain_cate: {required: true},
             photo: {required: true},
             api_key: {required: true},
             listing_type: {required: true},
@@ -135,7 +135,7 @@
 //            var dataValue = {autosave: 1, data: $('#form_driver_detail').serialize()}
 //            var dataValupend('autosave', '1');
 //            form.submit();
-            dataValue = new FormData($("#wm_api_change")[0]);
+            dataValue = new FormData($("#batch_upload_change")[0]);
             dataValue.append('autosave', '1');
 //            ModalCall(dataValue);
             var x = '0';
@@ -159,7 +159,7 @@
     function SaveData(dataValue, x) {
 //    function SaveData() {
 //        $("#modal1").closeModal();
-//        var dataValue = new FormData($("#wm_api_change")[0]);
+//        var dataValue = new FormData($("#batch_upload_change")[0]);
 ////                dataValue.append('autosave', '1');
 //        alert(dataValue);
         if (x == '0') {
@@ -168,8 +168,8 @@
 //            alert("its call");
             $("#modal1").closeModal();
             $.ajax({
-                url: '<?= _U . "wm_api"; ?>',
-//            data: {autosave: 1, data: $('#wm_api_change').serialize()},
+                url: '<?= _U . "batch_upload"; ?>',
+//            data: {autosave: 1, data: $('#batch_upload_change').serialize()},
                 type: 'POST',
                 data: dataValue,
                 async: false,
@@ -186,15 +186,15 @@
                     {
                         Materialize.toast("Record added successfully!", 4000);
                         showWait();
-                        location.href = "<?= _U . 'wm_api' ?>";
+                        location.href = "<?= _U . 'batch_upload' ?>";
                     } else {
                         Materialize.toast("Warrning! Please try After Some time", 4000);
                     }
-                    location.href = "<?= _U . 'wm_api' ?>";
+                    location.href = "<?= _U . 'batch_upload' ?>";
                 }
 
             });
-            location.href = "<?= _U . 'wm_api' ?>";
+            location.href = "<?= _U . 'batch_upload' ?>";
         }
 
     }
@@ -280,7 +280,11 @@
 //            "bLengthChange": false
 //           
 //        });
+        $('#table2').DataTable({
+            "bLengthChange": false,
+            "bSort": false
 
+        });
 
 <?php if ($success == "1") { ?>
             Materialize.toast('<?= $msg; ?>', 4000);
@@ -311,10 +315,10 @@
         $('.add_new').keydown(function (e) {
             if (e.keyCode === 13) {
                 $.ajax({
-                    url: "<?php echo _U ?>wm_api",
+                    url: "<?php echo _U ?>batch_upload",
                     data: {addnew: 1, add_new: $(this).val()},
                     success: function () {
-                        window.location.href = "<?php echo _U ?>wm_api";
+                        window.location.href = "<?php echo _U ?>batch_upload";
                     }
                 });
             }
@@ -335,10 +339,10 @@
     }
     function UpdateStatus() {
         $.ajax({
-            url: "<?php echo _U ?>wm_api",
+            url: "<?php echo _U ?>batch_upload",
             data: {updateStatus: 1, quote_id: $("#hiddenId").val()},
             success: function () {
-                window.location.href = "<?php echo _U ?>wm_api";
+                window.location.href = "<?php echo _U ?>batch_upload";
                 Materialize.toast('Quote Approved Successfully!', 4000);
             }
         });
@@ -351,20 +355,20 @@
             status = '0';
         }
         $.ajax({
-            url: "<?php echo _U ?>wm_api",
+            url: "<?php echo _U ?>batch_upload",
             data: {testcheckbox: 1, id: id, status: status},
             success: function () {
-                window.location.href = "<?php echo _U ?>wm_api";
+                window.location.href = "<?php echo _U ?>batch_upload";
             }
         });
     }
 
     function deletetodo(id) {
         $.ajax({
-            url: "<?php echo _U ?>wm_api",
+            url: "<?php echo _U ?>batch_upload",
             data: {deletetodo: 1, id: id},
             success: function () {
-                window.location.href = "<?php echo _U ?>wm_api";
+                window.location.href = "<?php echo _U ?>batch_upload";
             }
         });
     }

@@ -11,7 +11,7 @@
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <!--script src="../dist/jquery.typeahead.min.js"></script-->
 <script type="text/javascript" src="<?php print _MEDIA_URL ?>js/typeahead/src/jquery.typeahead.js"></script>
-<nav class="navbar-top">
+<nav class="navbar-top ">
     <div class="nav-wrapper ">
 
         <!-- Sidebar toggle -->
@@ -57,6 +57,7 @@
 
                 <a href="<?php l('wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'wm_api' ? 'active_menu' : ''); ?>" >Add Report </a>
                 <a href="<?php l('view_wm_api') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'view_wm_api' ? 'active_menu' : ''); ?>" >View Reports </a>
+                <a href="<?php l('batch_upload') ?>" class=" col l2 m12 s12 <?= (_cg('current_page') == 'batch_upload' ? 'active_menu' : ''); ?>" >Batch Upload</a>
                 <!--<a href="" class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo2' ? 'active_menu' : ''); ?>" data-activates="employees-dropdown"> Demo2</a>-->
 <!--                <a href=""  class=" dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo3' ? 'active_menu' : ''); ?>" data-activates="driver-dropdown"> Demo3</a>
                 <a href="" class="dropdown-button col l2 m12 s12 <?= (_cg('current_page') == 'Demo4' ? 'active_menu' : ''); ?>" data-activates="vehicle-dropdown"> Demo4</a>
