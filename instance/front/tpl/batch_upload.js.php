@@ -5,7 +5,7 @@
     {
         var dataValue = new FormData($("#importFrm")[0]);
         dataValue.append('importSubmit', '1');
-        alert(dataValue);
+//        alert(dataValue);
         $.ajax({
             url: '<?= _U . "batch_upload"; ?>',
 //            data: {importSubmit: 1, data: $('#importFrm').serialize()},
@@ -18,8 +18,8 @@
             processData: false,
             dataType: 'json',
             success: function (r) {
-                alert("Success msg");
-                alert(r.success);
+//                alert("Success msg");
+//                alert(r.success);
 //                Materialize.toast("Record added successfully!", 4000);
                 if (r.success === "1") {
 //                    alert(r.ID);
