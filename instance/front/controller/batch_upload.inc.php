@@ -3,7 +3,77 @@
 if (!isset($_SESSION['user'])) {
     _R('login');
 }
+if (isset($_REQUEST['UploadImage'])) {
+    $doc_file_name = array();
+    foreach ($_FILES as $key_param => $each_param) {
+        if ($key_param == 'doc_signed_contract') {
+            foreach ($_FILES[$key_param]["name"] as $file_key => $each_file) {
+                if ($_FILES[$key_param]["name"][$file_key] == "")
+                    continue;
+                $target_dir = _PATH . "docs/";
+                $file_name = time() . "_" . basename($_FILES[$key_param]["name"][$file_key]);
+                $target_file = $target_dir . $file_name;
+                $uploadOk = 1;
+                $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+                if (file_exists($target_file)) {
+                    $file_name = rand(1000, 9999) . "_" . time() . "_" . basename($_FILES[$key_param]["name"][$file_key]);
+                    $target_file = $target_dir . $file_name;
+                }
+//$doc_file_name[$key_param] = $file_name;
+                $doc_signed_contract_file_name .= "||GLUE||" . $file_name;
+                if (!move_uploaded_file($_FILES[$key_param]["tmp_name"][$file_key], $target_file)) {
+                    $error = 1;
+                    $err_msg .= "there was an error uploading " . $_FILES[$key_param]["name"][$file_key] . " file.<br>";
+                }
+            }
+        } else {
+            if ($_FILES[$key_param]["name"] == "")
+                continue;
+            $target_dir = _PATH . "docs/";
+            $file_name = time() . "_" . basename($_FILES[$key_param]["name"]);
+            $target_file = $target_dir . $file_name;
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+            if (file_exists($target_file)) {
+                $file_name = rand(1000, 9999) . "_" . time() . "_" . basename($_FILES[$key_param]["name"]);
+                $target_file = $target_dir . $file_name;
+            }
+            $doc_file_name[$key_param] = $file_name;
+            if (!move_uploaded_file($_FILES[$key_param]["tmp_name"], $target_file)) {
+                $error = 1;
+                $err_msg .= "there was an error uploading " . $_FILES[$key_param]["name"] . " file.<br>";
+            }
+        }
+//        d($each_param);
+    }
+//    d($_FILES[$key_param]["name"]);
+    $btch = array();
+    $btch = $_REQUEST['hidbatch'];
+//    d($btch);
+    $st = "";
+    foreach ($btch as $key => $value) {
+//        d("VALUE IS " . $value . " FILE IS " . $doc_file_name[$key]);
+//        d($doc_file_name['uploadfile' . $value]);
+        $_fields = array();
+        $_fields['picture_url'] = _escape($doc_file_name['uploadfile' . $value]);
+        $st = qu("tb_form", $_fields, "batch_number='$value'");
+    }
+    if (!empty($st)) {
+        $_SESSION['success'] = '1';
+        $_SESSION['msg'] = "Photos Uploaded successfully!";
+    } else {
+        $_SESSION['success'] = '-1';
+        $_SESSION['msg'] = " Warrning! Please try After Some time";
+    }
+//    echo json_encode(array("success" => $_SESSION['success']));
+
+//    die;
+}
 if (isset($_REQUEST['importSubmit'])) {
+//    d($_FILES);
+//    die;
     foreach ($_FILES as $key_param => $each_param) {
         if ($key_param == 'doc_signed_contract') {
             foreach ($_FILES[$key_param]["name"] as $file_key => $each_file) {
@@ -55,14 +125,19 @@ if (isset($_REQUEST['importSubmit'])) {
 //$csv_file = CSV_PATH . "contact.csv";
     $csv_file = $target_file;
 //    d($csv_file);
-
+    $addedID = array();
+    $addedbatch = array();
     if (($handle = fopen($csv_file, "r")) !== FALSE) {
         fgetcsv($handle);
+        $line = 0;
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+
             $num = count($data);
             for ($c = 0; $c < $num; $c++) {
                 $col[$c] = $data[$c];
             }
+
+
             $col1 = $col[0];
             $col2 = $col[1];
             $col3 = $col[2];
@@ -276,18 +351,23 @@ if (isset($_REQUEST['importSubmit'])) {
             if ($num < 98) {
                 $_SESSION['success'] = '1';
                 $_SESSION['msg'] = "Declined!, File having fewer columns!";
+                echo json_encode(array("success" => "0"));
             } else {
                 if (!empty($exist['id'])) {
                     $_SESSION['success'] = '3';
                     $_SESSION['msg'] = "Accepted!, But File have Some duplicated Value!";
+//                    echo json_encode(array("success" => "3"));
 //                d($exist);
                 } else {
+                    $addedID[$line] = _escape($col1);
+                    $addedbatch[$line] = _escape($col6);
                     $s = qi("tb_form", $fields);
                     if (!empty($s)) {
 //                    $success = '1';
 //                    $msg = " File updated successfully!";
                         $_SESSION['success'] = '1';
                         $_SESSION['msg'] = "Accepted!, File uploaded successfully!";
+//                        echo json_encode(array("success" => "1", "ID" => $addedID));
 //                        $msg = " File updated successfully!";
                     } else {
 //                    $success = '-1';
@@ -295,11 +375,19 @@ if (isset($_REQUEST['importSubmit'])) {
 
                         $_SESSION['success'] = '-1';
                         $_SESSION['msg'] = "Declined! File Not uploaded!";
+//                        echo json_encode(array("success" => "0", "ID" => $addedID));
                     }
                 }
             }
+            $line = $line + 1;
         }
+
+//        d($addedID);
+//        die;
         fclose($handle);
+        echo json_encode(array("success" => $_SESSION['success'], "ID" => $addedID, "batch" => $addedbatch));
+
+        die;
     }
 }
 //$last_batch_no = qs("select * from tb_form ORDER by id DESC LIMIT 1");

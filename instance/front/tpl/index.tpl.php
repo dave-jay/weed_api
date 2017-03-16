@@ -16,7 +16,7 @@
         <!--<link rel="icon" href="<?php print _MEDIA_URL ?>images/aber-logo.png">-->
 
 
-        <title>KS Lab | <?php print _cg("page_title"); ?></title>
+        <title>KS Labs| <?php print _cg("page_title"); ?></title>
 
         <!--<link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,500,700,900' rel='stylesheet' type='text/css'>-->
         <!--<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">--> 

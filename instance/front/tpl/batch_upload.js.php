@@ -1,6 +1,53 @@
 <?php include _PATH . "instance/front/tpl/libValidate.php" ?>
 
 <script type="text/javascript">
+    function Call()
+    {
+        var dataValue = new FormData($("#importFrm")[0]);
+        dataValue.append('importSubmit', '1');
+        alert(dataValue);
+        $.ajax({
+            url: '<?= _U . "batch_upload"; ?>',
+//            data: {importSubmit: 1, data: $('#importFrm').serialize()},
+            type: 'POST',
+            data: dataValue,
+            async: false,
+            cache: false,
+            contentType: false,
+            enctype: 'multipart/form-data',
+            processData: false,
+            dataType: 'json',
+            success: function (r) {
+                alert("Success msg");
+                alert(r.success);
+//                Materialize.toast("Record added successfully!", 4000);
+                if (r.success === "1") {
+//                    alert(r.ID);
+//                    alert(r.batch);
+                    $("#modal1").openModal({dismissible: false});
+//                    $.each(r.batch, function () {
+//                        alert(r.batch);
+//                        $("#E").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">' + r.batch + ': </span> <span id="" name="lblname" class="help-span">' + r.id + '</span></div>');
+//                    });
+                    $.each(r.batch, function (key, value) {
+//                        alert(key + ": " + value);
+                        $("#E").append('<div class="col l4 m4 s12"><span for="hidname" style="color:#888;" class="help-span">Batch Number: </span> <span id="" name="lblname" class="help-span">' + value + '</span><input id="hid' + value + '" type="hidden" name="hidbatch[]" value="' + value + '"> </div><div class="col l6 m6 s12"><span for="hidname" style="color:#888;" class="help-span">Photo Upload: </span> <input name="uploadfile' + value + '" type="file" id="' + value + '" class="show_preview" data-prev_id="prev_photo' + value + '" required /></div> <div class="col l2 m2 s12"><div id="prev_photo' + value + '" class="prev_image"></div></div>');
+                    });
+//                    Materialize.toast("Accepted!, File uploaded successfully!", 4000);
+                    showWait();
+//                    location.href = "<?= _U . 'batch_upload' ?>";
+                } else if (r.success == '3') {
+                    Materialize.toast("Accepted!, But File have Some duplicated Value!", 4000);
+                    location.href = "<?= _U . 'batch_upload' ?>";
+                } else {
+                    Materialize.toast("Declined! File Not uploaded!", 4000);
+                    location.href = "<?= _U . 'batch_upload' ?>";
+                }
+//                location.href = "<?= _U . 'batch_upload' ?>";
+            }
+
+        });
+    }
 //    $("#submit").on("click", function () {
 //        {
 ////            $("#batch_upload_change").submit();
@@ -156,6 +203,9 @@
         $("#hid_tested_at").val(year + "-" + month + "-" + day);
         $('#dateDiscription' + id).text(month + "/" + day);
     }
+    function uploadData(dataValue, x) {
+
+    }
     function SaveData(dataValue, x) {
 //    function SaveData() {
 //        $("#modal1").closeModal();
@@ -181,7 +231,6 @@
                 success: function (r) {
 //                alert(r);
                     Materialize.toast("Record added successfully!", 4000);
-
                     if (r.success == '1')
                     {
                         Materialize.toast("Record added successfully!", 4000);
@@ -272,10 +321,25 @@
                 }
             }
         });
-
     }
     $(document).ready(function () {
-
+        $("body").on("change", ".show_preview", function ()
+        {
+            var prev_id = $(this).data('prev_id');
+            var files = !!this.files ? this.files : [];
+            if (!files.length || !window.FileReader) {
+                return
+            }
+            ;
+            //if (/^image/.test( files[0].type))
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onloadend = function () {
+                $("#" + prev_id).show();
+                $("#" + prev_id).css("background-image", "url(" + this.result + ")");
+//                $("#1" + prev_id).css("background-image", "url(" + this.result + ")");
+            };
+        });
 //        $('#table1').DataTable({
 //            "bLengthChange": false
 //           
@@ -285,11 +349,8 @@
             "bSort": false
 
         });
-
 <?php if ($success == "1") { ?>
             Materialize.toast('<?= $msg; ?>', 4000);
-
-
 <?php } ?>
 <?php if ($success == "-1") { ?>
             Materialize.toast('<?= $msg; ?>', 4000);
@@ -299,8 +360,6 @@ if ($_SESSION['success'] == "1") {
     $_SESSION['success'] = '0';
     ?>
             Materialize.toast('<?= $_SESSION['msg']; ?>', 4000);
-
-
 <?php }
 ?>
 <?php

@@ -12,6 +12,9 @@
         padding-right: 1rem;
         margin-top: 2px;
     }
+    .row{
+        padding: 1rem;
+    }
     .prev_image{
         height: 50px;
         width: 50px;
@@ -34,7 +37,7 @@
             <form action="batch_upload" method="post" enctype="multipart/form-data" id="importFrm">
                 <label>Upload CSV File:</label>
                 <input type="file" name="file" required/>
-                <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+                <input type="button" class="btn btn-primary" name="importSubmit" value="IMPORT" onclick="Call()">
             </form>
 
         </div>
@@ -164,11 +167,11 @@
     </div>
 </div>
 <div id="modal1"  class="modal modal-fixed-footer modal-fixed-header-footer " >
-    <form id="batch_upload_edit" action="batch_upload" method="post">
+    <form id="batch_upload_edit" action="batch_upload" method="post" enctype="multipart/form-data">
         <div class="modal-header">
             <div class="header-text">
 
-                <span style="font-size: 16px;font-weight: bold;"><?php print _t('206', 'Confirm Details') ?> </span>
+                <span style="font-size: 16px;font-weight: bold;"><?php print _t('206', 'Upload Image') ?> </span>
 
                 <!--<a class="btn btn-default btn-rounded" id="vehicle" onclick=" divDisplay('vehicle')" >Vehicle Info</a>-->
             </div>
@@ -199,106 +202,106 @@
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="title">Cannabinoids</div>
-                            <div class="content">
-                                <div class="row"  id="C"></div>
-                                <!--                                <div class="row"> 
-                                                                    <div class="col m4 l4 s12"> 
-                                
-                                                                <i class="mdi-action-label prefix "></i> 
-                                                                        <span for="thc" class="help-span">THC % :</span>
-                                                                        <input id="hidthc" type="hidden" name="hidthc" value=""> 
-                                                                        <span id="lblthc" name="lblthc" class="help-span"></span> 
-                                                                        <div id="errorbox_thc" style=""></div>
-                                
-                                                                    </div> 
-                                                                    <div class="col m4 l4 s12"> 
-                                
-                                                                        <i class="mdi-action-label prefix "></i> 
-                                                                        <span for="thc" class="help-span">THCA :</span>
-                                                                        <input id="hidthca" type="hidden" name="hidthca" value="" > 
-                                                                        <span id="lblthca" class="help-span"></span> 
-                                                                        <div id="errorbox_thca" style=""></div>
-                                
-                                                                    </div> 
-                                                                    <div class="col m4 l4 s12"> 
-                                                                        <div class="row"> 
-                                                                        <i class="mdi-action-label prefix "></i>
-                                                                        <span for="thc" class="help-span">CBD :</span>
-                                                                        <input id="hidcbd" type="hidden" name="hidcbd" value="" > 
-                                                                        <span id="lblcbd" class="help-span"></span> 
-                                                                        <div id="errorbox_cbd" style=""></div>
-                                                                        </div> 
-                                                                    </div> 
-                                                                    <div style="clear: both;"></div>
-                                                                    <div class="col m4 l4 s12"> 
-                                                                        <div class="row"> 
-                                                                            <i class="mdi-action-label prefix "></i>
-                                                                        <span for="thc" class="help-span">CBDA :</span>
-                                                                        <input id="hidcbda" type="hidden" name="hidcbda" value="" > 
-                                                                        <span id="lblcbda" class="help-span"></span> 
-                                                                        <div id="errorbox_cbda" style=""></div>
-                                                                        </div> 
-                                                                    </div> 
-                                                                    <div class="col m4 l4 s12"> 
-                                                                        <div class="row"> 
-                                                                            <i class="mdi-action-label prefix "></i>
-                                                                        <span for="thc" class="help-span">CBN :</span>
-                                                                        <input id="hidcbn" type="hidden" name="hidcbn" value="" > 
-                                                                        <span id="lblcbn" class="help-span"></span> 
-                                                                        <div id="errorbox_cbn" style=""></div>
-                                                                        </div> 
-                                                                    </div> 
-                                                                    <div class="col m4 l4 s12" style="padding-bottom: 10px;"> 
-                                                                        <div class="row"> 
-                                                                            <i class="mdi-action-label prefix "></i> 
-                                                                        <span for="thc" class="help-span">Strain Category :</span>
-                                                                        <input id="hidstrain_cate" type="hidden" name="hidstrain_cate" value="" > 
-                                                                        <input id="hidData" type="hidden" name="hidData" value="" > 
-                                                                        <span id="lblstrain_cate" class="help-span"></span> 
-                                                                        <div id="errorbox_strain_cate" style=""></div>
-                                                                        </div> 
-                                                                    </div> 
-                                                                </div>-->
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="title">Terpenes</div>
-                            <div class="content">
-                                <div class="row"  id="T"></div>
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="title">Pesticides</div>
-                            <div class="content">
-                                <div class="row"  id="P"></div>
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="title">Microbiological</div>
-                            <div class="content">
-                                <div class="row"  id="M"></div>
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="title">Solvents</div>
-                            <div class="content">
-                                <div class="row"  id="S"></div>
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="title">API Details</div>
-                            <div class="content">
-                                <div class="row"  id="A"></div>
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
+                        <!--                        <div class="card">
+                                                    <div class="title">Cannabinoids</div>
+                                                    <div class="content">
+                                                        <div class="row"  id="C"></div>
+                                                                                        <div class="row"> 
+                                                                                            <div class="col m4 l4 s12"> 
+                                                        
+                                                                                        <i class="mdi-action-label prefix "></i> 
+                                                                                                <span for="thc" class="help-span">THC % :</span>
+                                                                                                <input id="hidthc" type="hidden" name="hidthc" value=""> 
+                                                                                                <span id="lblthc" name="lblthc" class="help-span"></span> 
+                                                                                                <div id="errorbox_thc" style=""></div>
+                                                        
+                                                                                            </div> 
+                                                                                            <div class="col m4 l4 s12"> 
+                                                        
+                                                                                                <i class="mdi-action-label prefix "></i> 
+                                                                                                <span for="thc" class="help-span">THCA :</span>
+                                                                                                <input id="hidthca" type="hidden" name="hidthca" value="" > 
+                                                                                                <span id="lblthca" class="help-span"></span> 
+                                                                                                <div id="errorbox_thca" style=""></div>
+                                                        
+                                                                                            </div> 
+                                                                                            <div class="col m4 l4 s12"> 
+                                                                                                <div class="row"> 
+                                                                                                <i class="mdi-action-label prefix "></i>
+                                                                                                <span for="thc" class="help-span">CBD :</span>
+                                                                                                <input id="hidcbd" type="hidden" name="hidcbd" value="" > 
+                                                                                                <span id="lblcbd" class="help-span"></span> 
+                                                                                                <div id="errorbox_cbd" style=""></div>
+                                                                                                </div> 
+                                                                                            </div> 
+                                                                                            <div style="clear: both;"></div>
+                                                                                            <div class="col m4 l4 s12"> 
+                                                                                                <div class="row"> 
+                                                                                                    <i class="mdi-action-label prefix "></i>
+                                                                                                <span for="thc" class="help-span">CBDA :</span>
+                                                                                                <input id="hidcbda" type="hidden" name="hidcbda" value="" > 
+                                                                                                <span id="lblcbda" class="help-span"></span> 
+                                                                                                <div id="errorbox_cbda" style=""></div>
+                                                                                                </div> 
+                                                                                            </div> 
+                                                                                            <div class="col m4 l4 s12"> 
+                                                                                                <div class="row"> 
+                                                                                                    <i class="mdi-action-label prefix "></i>
+                                                                                                <span for="thc" class="help-span">CBN :</span>
+                                                                                                <input id="hidcbn" type="hidden" name="hidcbn" value="" > 
+                                                                                                <span id="lblcbn" class="help-span"></span> 
+                                                                                                <div id="errorbox_cbn" style=""></div>
+                                                                                                </div> 
+                                                                                            </div> 
+                                                                                            <div class="col m4 l4 s12" style="padding-bottom: 10px;"> 
+                                                                                                <div class="row"> 
+                                                                                                    <i class="mdi-action-label prefix "></i> 
+                                                                                                <span for="thc" class="help-span">Strain Category :</span>
+                                                                                                <input id="hidstrain_cate" type="hidden" name="hidstrain_cate" value="" > 
+                                                                                                <input id="hidData" type="hidden" name="hidData" value="" > 
+                                                                                                <span id="lblstrain_cate" class="help-span"></span> 
+                                                                                                <div id="errorbox_strain_cate" style=""></div>
+                                                                                                </div> 
+                                                                                            </div> 
+                                                                                        </div>
+                                                        <div style="clear: both;"></div>
+                                                    </div>
+                                                </div>-->
+                        <!--                        <div class="card">
+                                                    <div class="title">Terpenes</div>
+                                                    <div class="content">
+                                                        <div class="row"  id="T"></div>
+                                                        <div style="clear: both;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="title">Pesticides</div>
+                                                    <div class="content">
+                                                        <div class="row"  id="P"></div>
+                                                        <div style="clear: both;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="title">Microbiological</div>
+                                                    <div class="content">
+                                                        <div class="row"  id="M"></div>
+                                                        <div style="clear: both;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="title">Solvents</div>
+                                                    <div class="content">
+                                                        <div class="row"  id="S"></div>
+                                                        <div style="clear: both;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="title">API Details</div>
+                                                    <div class="content">
+                                                        <div class="row"  id="A"></div>
+                                                        <div style="clear: both;"></div>
+                                                    </div>
+                                                </div>-->
 
                         <div style="clear: both; padding-bottom: 20px;"></div>
 
@@ -312,9 +315,9 @@
 
         </div>
         <div class="modal-footer ">
-            <button data-tooltip='Click to Save' name="save"  class="right waves-effect waves-light btn btn-default z-depth-0 z-depth-1-hover tooltipped" type="button" style="margin: 3px 10px 5px 2px;" onclick="SaveData(dataValue, '1')"><?php print _t('18', 'Confirm') ?></button>
+            <button data-tooltip='Click to Save' name="UploadImage"  class="right waves-effect waves-light btn btn-default z-depth-0 z-depth-1-hover tooltipped" type="submit" style="margin: 3px 10px 5px 2px;"><?php print _t('18', 'Confirm') ?></button>
 
-            <button data-tooltip='Click to Close' name="edit" id="close" class="right modal-close  grey  waves-effect waves-light btn btn-default z-depth-0 z-depth-1-hover tooltipped" type="button" style="margin: 3px 10px 5px 2px;" onclick="Closed()"><?php print _t('179', 'Edit') ?></button>
+            <!--<button data-tooltip='Click to Close' name="edit" id="close" class="right modal-close  grey  waves-effect waves-light btn btn-default z-depth-0 z-depth-1-hover tooltipped" type="button" style="margin: 3px 10px 5px 2px;" onclick="Closed()"><?php print _t('179', 'Edit') ?></button>-->
             <div style="clear: both"></div>
             <input type="hidden" name="d_id" id="d_id" value="">
             <input type="hidden" name="v_id" id="v_id" value="">
