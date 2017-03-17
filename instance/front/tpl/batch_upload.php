@@ -143,7 +143,7 @@
                                             } else {
 //                                            echo "API pushed Remains";
                                                 ?>
-                                                <a  id = "view<?php echo $row['id']; ?>" name = "<?php echo $row['id']; ?>" onclick = "pushToAPI(<?php echo $row['id'] . ',' . $row['batch_number']; ?>)" class = "btn btn-rounded tooltipped  large center-align  cursor " data-delay = "50" data-tooltip = "PUSH TO API" title = "PUSH TO API" >
+                                                <a  id = "view<?php echo $row['id']; ?>" name = "<?php echo $row['id']; ?>" onclick = "pushToAPI(<?php echo $row['id'] ; ?>)" class = "btn btn-rounded tooltipped  large center-align  cursor " data-delay = "50" data-tooltip = "PUSH TO API" title = "PUSH TO API" >
                                                 <!--<i class = "mdi-editor-border-color prefix small"></i> -->
                                                     <!--<i class = "mdi-content-create prefix small"></i>-->
                                                     Push To API

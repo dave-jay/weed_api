@@ -1,7 +1,7 @@
 <?php include _PATH . "instance/front/tpl/libValidate.php" ?>
 
 <script type="text/javascript">
-    function pushToAPI(id, batch) {
+    function pushToAPI(id) {
 //        alert(id + "-" + batch);
         $.ajax({
             url: '<?= _U . "batch_upload"; ?>',

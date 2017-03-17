@@ -1,7 +1,7 @@
 <?php include _PATH . "instance/front/tpl/libValidate.php" ?>
 
 <script type="text/javascript">
-    function pushToAPI(id, batch) {
+    function pushToAPI(id) {
 
 //        $("#modal1").closeModal();
 //        alert(id + "-" + batch);

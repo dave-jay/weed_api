@@ -77,8 +77,8 @@
 
                             <tr  style="cursor: pointer;" id="<?php echo $row['id']; ?>" >
 
-                                                                        <!--<tr onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link" style="cursor: pointer;" >-->
-                                                                                    <!--<td style="width: 5%;"><?php echo $_SESSION[$row['id']]; ?></td>--> 
+                                                                            <!--<tr onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link" style="cursor: pointer;" >-->
+                                                                                        <!--<td style="width: 5%;"><?php echo $_SESSION[$row['id']]; ?></td>--> 
                                 <td style="width: 5%;" onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link" ><?php echo $i; ?></td> 
                                 <td style="width: 10%;" onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link"><?php echo $row['name']; ?></td>
                                 <td style="width: 10%;" onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link"><?php echo $row['c_thc']; ?>
@@ -122,7 +122,7 @@
                                         } else {
 //                                            echo "API pushed Remains";
                                             ?>
-                                            <a  id = "a_remain<?php echo $row['id']; ?>" name = "<?php echo $row['id']; ?>" onclick = "pushToAPI(<?php echo $row['id'] . ',' . $row['batch_number']; ?>)" class = "btn btn-rounded tooltipped  large center-align  cursor " data-delay = "50" data-tooltip = "PUSH TO API" title = "PUSH TO API" >
+                                            <a  id = "a_remain<?php echo $row['id']; ?>" name = "<?php echo $row['id']; ?>" onclick = "pushToAPI(<?php echo $row['id']; ?>)" class = "btn btn-rounded tooltipped  large center-align  cursor " data-delay = "50" data-tooltip = "PUSH TO API" title = "PUSH TO API" >
                                             <!--<i class = "mdi-editor-border-color prefix small"></i> -->
                                                 <!--<i class = "mdi-content-create prefix small"></i>-->
                                                 Push To API
