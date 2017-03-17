@@ -47,8 +47,8 @@
                 <a href="#" class="logo" >
                     <!--<img style="height: 62px;" src="<?php print _MEDIA_URL ?>images/AberLogo2.jpg" alt="Con">-->
                     <img style="height: 56px;margin-left: 2px;" class="logoset" src="<?php print _MEDIA_URL ?>images/ks_labs-logo.png" alt="Con">
-<!--                    <span style="font-weight:bold;font-size:39px;color: #C71418; margin-left: 2%; text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
-                          #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;">KS Lab</span>-->
+<!--                    <span style="font-weight:bold;font-size:36px;color: #C71418; margin-left: 2%; text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+                          #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;">KS Labs</span>-->
 
                 </a>
             </div>

@@ -1,6 +1,32 @@
 <?php include _PATH . "instance/front/tpl/libValidate.php" ?>
 
 <script type="text/javascript">
+    function pushToAPI(id, batch) {
+
+//        $("#modal1").closeModal();
+        alert(id + "-" + batch);
+        $.ajax({
+            url: '<?= _U . "view_wm_api"; ?>',
+            data: {
+                SendToAPI: 1,
+                userId: id
+            },
+            dataType: 'json',
+            type: 'POST',
+            success: function (r) {
+                if (r.success == "1") {
+                    Materialize.toast("Data Sent To API Successful", 4000);
+//                    location.href = "<?= _U . 'batch_upload' ?>" ;
+
+                    $("#d" + id).html("<a  id ='a_done" + id + "' name ='" + id + "' onclick='BindDataModal(" + id + ")' class='tooltipped large center-align cursor' data-delay='50' data-tooltip='' title='' >API PUSHED</a>");
+//                    alert("<a  id ='a_done" + id + "' name ='" + id + "' onclick='BindDataModal(" + id + ")' class='tooltipped large center-align cursor' data-delay='50' data-tooltip='' title='' >API PUSHED</a>");
+//                    $("#" + id).load("#" + id");
+                } else {
+                    Materialize.toast("Something Wrong Please try After Some time", 4000);
+                }
+            }
+        });
+    }
 //    $("#submit").on("click", function () {
 //        {
 ////            $("#view_wm_api_change").submit();

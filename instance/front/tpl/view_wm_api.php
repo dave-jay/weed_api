@@ -57,7 +57,7 @@
 
 
 <!--                                <th>Select for Next Station</th>-->
-                            <!--<th><?php print _t('', 'Action') ?> </th>-->
+                            <th><?php print _t('', 'API Status') ?> </th>
 <!--                                <th><?php print _t('36', 'Edit') ?> </th>
                             <th><?php print _t('38', 'Move') ?> </th>
                             <th><?php print _t('39', 'Reject') ?> </th>
@@ -75,41 +75,64 @@
                             $_SESSION[$row['id']] = $row['id'];
                             ?>
 
-                            <tr onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link" style="cursor: pointer;" >
-                                        <!--<td style="width: 5%;"><?php echo $_SESSION[$row['id']]; ?></td>--> 
-                                <td style="width: 5%;" ><?php echo $i; ?></td> 
-                                <td style="width: 10%;"><?php echo $row['name']; ?></td>
-                                <td style="width: 10%;"><?php echo $row['c_thc']; ?>
-                                    <div class="hide-on-med-and-up">
-                                        <span>Melli Number:</span><br/>
-                                        <span><?php echo $row['melli_no']; ?></span><br/>
-                                        <span>Cell Number:</span><br/>
-                                        <span><?php echo $row['phone']; ?></span><br/>
-                                        <span>Make Model Year:</span><br/>
-                                        <span><?php
-                                            $md = $row['make_modal'];
-                                            if ($md == "other") {
-                                                $other = $row['make_modal_other'];
-                                            } else {
-                                                $other = "";
-                                            }
-                                            echo $row['make_modal'] . ' ' . $other . '-' . $row['year'];
-                                            ?></span>
-                                    </div>
+                            <tr  style="cursor: pointer;" id="<?php echo $row['id']; ?>" >
+
+                                                                        <!--<tr onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link" style="cursor: pointer;" >-->
+                                                                                    <!--<td style="width: 5%;"><?php echo $_SESSION[$row['id']]; ?></td>--> 
+                                <td style="width: 5%;" onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link" ><?php echo $i; ?></td> 
+                                <td style="width: 10%;" onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link"><?php echo $row['name']; ?></td>
+                                <td style="width: 10%;" onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link"><?php echo $row['c_thc']; ?>
+                                    <!--                                        <div class="hide-on-med-and-up">
+                                                                                <span>Melli Number:</span><br/>
+                                                                                <span><?php echo $row['melli_no']; ?></span><br/>
+                                                                                <span>Cell Number:</span><br/>
+                                                                                <span><?php echo $row['phone']; ?></span><br/>
+                                                                                <span>Make Model Year:</span><br/>
+                                                                                <span><?php
+                                    $md = $row['make_modal'];
+                                    if ($md == "other") {
+                                        $other = $row['make_modal_other'];
+                                    } else {
+                                        $other = "";
+                                    }
+                                    echo $row['make_modal'] . ' ' . $other . '-' . $row['year'];
+                                    ?></span>
+                                                                            </div>-->
 
                                 </td> 
-                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['c_thca']; ?></td> 
-                                <td  style="width: 15%;"class="ltr hide-on-med-and-down" id="td_phone_<?= $row['id']; ?>"><?php echo $row['c_cbd']; ?></td>  
-                                <td  style='word-break: break-all; width: 15%;'><?php echo $row['c_cbda']; ?></td> 
-                                <td style="width: 15%;" class="hide-on-med-and-down"><?php echo $row['c_cbn']; ?></td> 
-                                <td class="ltr hide-on-small-and-down" style="width: 15%;" >  
+                                <td style="width: 12%;" class="hide-on-med-and-down link" onclick="BindDataModal('<?php echo $row['id']; ?>')" ><?php echo $row['c_thca']; ?></td> 
+                                <td  style="width: 12%;"class="ltr hide-on-med-and-down link" onclick="BindDataModal('<?php echo $row['id']; ?>')"  id="td_phone_<?= $row['id']; ?>"><?php echo $row['c_cbd']; ?></td>  
+                                <td  style='word-break: break-all; width: 12%;' onclick="BindDataModal('<?php echo $row['id']; ?>')" class="link"><?php echo $row['c_cbda']; ?></td> 
+                                <td style="width: 12%;" class="hide-on-med-and-down link" onclick="BindDataModal('<?php echo $row['id']; ?>')" ><?php echo $row['c_cbn']; ?></td> 
+                                <td class="ltr hide-on-small-and-down link" style="width: 12%;" onclick="BindDataModal('<?php echo $row['id']; ?>')"  >  
                                     <?php
                                     echo $row['c_strain_cate'];
 //                                    $vin_arr = explode('-', $row["license_plate"]);
                                     ?>
 
                                 </td> 
-
+                                <td style="width: 15%;" class="hide-on-med-and-down" >
+                                    <div id="d<?= $row['id']; ?>" style="text-align: center;">
+                                        <?php
+                                        $flagApi = qs("select * from api_flag where tb_form_id='{$row['id']}'");
+                                        if ($flagApi['push_data_api'] == "1") {
+                                            ?>
+                                            <a  id = "a_done<?php echo $row['id']; ?>" name = "<?php echo $row['id']; ?>" onclick="BindDataModal('<?php echo $row['id']; ?>')" class = "tooltipped  large center-align  cursor " data-delay = "50" data-tooltip = "" title = "" >API PUSHED</a>
+                                            <?php
+                                        } else {
+//                                            echo "API pushed Remains";
+                                            ?>
+                                            <a  id = "a_remain<?php echo $row['id']; ?>" name = "<?php echo $row['id']; ?>" onclick = "pushToAPI(<?php echo $row['id'] . ',' . $row['batch_number']; ?>)" class = "btn btn-rounded tooltipped  large center-align  cursor " data-delay = "50" data-tooltip = "PUSH TO API" title = "PUSH TO API" >
+                                            <!--<i class = "mdi-editor-border-color prefix small"></i> -->
+                                                <!--<i class = "mdi-content-create prefix small"></i>-->
+                                                Push To API
+                                                <!--<span style = "font-size: 30px; line-height: 20px;">Edit</span> -->
+                                            </a>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </td> 
 
                         <input type="hidden" value ="<?php echo $_SESSION[$row['id']]; ?>" name='record_id' />
                         </tr>

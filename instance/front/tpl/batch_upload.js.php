@@ -1,6 +1,29 @@
 <?php include _PATH . "instance/front/tpl/libValidate.php" ?>
 
 <script type="text/javascript">
+    function pushToAPI(id, batch) {
+//        alert(id + "-" + batch);
+        $.ajax({
+            url: '<?= _U . "batch_upload"; ?>',
+            data: {
+                SendToAPI: 1,
+                userId: id
+            },
+            dataType: 'json',
+            type: 'POST',
+            success: function (r) {
+                if (r.success == "1") {
+                    Materialize.toast("Data Sent To API Successful", 4000);
+//                    location.href = "<?= _U . 'batch_upload' ?>" ;
+
+                    $("#d" + id).html("API PUSHED");
+//                    $("#" + id).load("#" + id");
+                } else {
+                    Materialize.toast("Something Wrong Please try After Some time", 4000);
+                }
+            }
+        });
+    }
     function Call()
     {
         var dataValue = new FormData($("#importFrm")[0]);

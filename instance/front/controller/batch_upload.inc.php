@@ -68,8 +68,42 @@ if (isset($_REQUEST['UploadImage'])) {
         $_SESSION['msg'] = " Warrning! Please try After Some time";
     }
 //    echo json_encode(array("success" => $_SESSION['success']));
-
 //    die;
+}
+if (isset($_REQUEST['SendToAPI'])) {
+    $ID = $_REQUEST['userId'];
+    $values = qs("select * from tb_form where id='$ID'");
+//    d($values);
+//    die();
+    $_fields = array();
+    $_fields['tb_form_id'] = $values['id'];
+    /* API CALL */
+    $APIKey = _escape($values['api_key']);
+//    d($data);
+//    die;
+    $chk1 = "";
+    $exist = qs("select * from api_flag where tb_form_id='$ID'");
+    if (!empty($exist)) {
+        //        include _PATH . "instance/front/tpl/weedAPICall.php";
+        $_fields['push_data_api'] = "1";
+        $chk1 = qu("api_flag", $_fields, "tb_form_id='{$values['id']}'");
+    } else {
+//        $APIKey = _escape($_REQUEST['api_key']);
+        if (!empty($APIKey)) {
+//        include _PATH . "instance/front/tpl/weedAPICall.php";
+            $_fields['push_data_api'] = "1";
+        } else {
+            $_fields['push_data_api'] = "0";
+        }
+        $chk1 = qi("api_flag", $_fields);
+    }
+
+    if (!empty($chk1)) {
+//        echo json_encode(array("success" => "1"));
+    } else {
+//        echo json_encode(array("success" => "0"));
+    }
+    die;
 }
 if (isset($_REQUEST['importSubmit'])) {
 //    d($_FILES);

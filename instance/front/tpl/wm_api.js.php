@@ -22,7 +22,7 @@
             c_cbg: {required: true},
 //            c_strain_cate: {required: true},
             photo: {required: true},
-            api_key: {required: true},
+//            api_key: {required: true},
             listing_type: {required: true},
             listing_id: {required: true},
             tested_at: {required: true},

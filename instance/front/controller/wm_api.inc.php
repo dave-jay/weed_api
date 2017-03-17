@@ -62,9 +62,7 @@ if (isset($_REQUEST['autosave'])) {
 //    die;
 //    d($_REQUEST['hid_tested_at']);
 //    die;
-    
-    /* API CALL */
-//    include _PATH . "instance/front/tpl/weedAPICall.php";
+
 
 
 
@@ -167,7 +165,156 @@ if (isset($_REQUEST['autosave'])) {
     $fields['listing_type'] = _escape($_REQUEST['listing_type']); // 1001
     $fields['api_key'] = _escape($_REQUEST['api_key']); // 1001
     $chk = qi("tb_form", $fields);
-    d($chk);
+    $content = "<html>";
+    $content .= "<body>";
+    $content .= "<div style = 'font-family:verdana;margin:1rem;pading:1rem;'>";
+    $content .= "<div style = 'font-family: verdana;'>Hi Admin, </div>";
+    $content .= "<br>";
+    $content .= "<div>New Record is Name: <span style = 'color: black;background-color:yellow; font-family: verdana; font-weight: bold; font-size: 14px;'>" . strtoupper($_REQUEST['name']) . "</span> and Batch Number:<span style = 'color: black;background-color:yellow; font-family: verdana; font-weight: bold; font-size: 14px;'>" . $_REQUEST['batch_no'] . "</span>  is added by " . $_SESSION['user']['fname'] . " " . $_SESSION['user']['lname'] . "</div>";
+    $content .= "<br/>";
+    $content .= "<div style='background-color: whitesmoke; color: black;margin: 1rem;padding: 1rem;' >
+        <div style='width:100%;'><h3>Weedmaps Report</h3></div>
+        <hr/>
+        <div style='background-color: whitesmoke; color: black;width:100%;'>
+            <div style='width:50%;float: left;'>Name:  <b>" . strtoupper($_REQUEST['name']) . "</b></div>
+            <div style='width:50%;float: left;'>Batch Number: <b>" . $_REQUEST['batch_no'] . "</b></div>
+            <div style='clear: both;'></div>
+            <hr/>
+            <div style='width:100%;'><h5><b>Cannabinoids</b></h5></div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:96%; padding: 0.8rem 2rem;'>
+                <div style='width:20%;float: left;'>Cannabinoids[THCa%]:<b>" . $_REQUEST['c_thca'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[THC%]:<b>" . $_REQUEST['c_thc'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBDa%]:<b>" . $_REQUEST['c_cbda'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBD%]:<b>" . $_REQUEST['c_cbd'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBG%]:<b>" . $_REQUEST['c_cbg'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[THCv%]:<b>" . $_REQUEST['c_thcv'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBDv%]:<b>" . $_REQUEST['c_cbdv'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBNa%]:<b>" . $_REQUEST['c_cbna'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBGa%]:<b>" . $_REQUEST['c_cbga'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBC%]:<b>" . $_REQUEST['c_cbc'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBCa%]:<b>" . $_REQUEST['c_thca'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBL%]:<b>" . $_REQUEST['c_cbl'] . "</b></div>
+                <div style='width:20%;float: left;'>Cannabinoids[CBLA%]:<b>" . $_REQUEST['c_cbla'] . "</b></div>
+                <div style='clear: both;'></div>
+            </div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:100%;'><h5><b>Terpenes</b></h5></div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:96%; padding: 0.8rem 2rem;'>
+                <div style='width:20%;float: left;'>Terpenes[alpha_pinene%]:<b>" . $_REQUEST['t_alpha_pinene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[beta_pinene%]:<b>" . $_REQUEST['t_beta_pinene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[linalool%]:<b>" . $_REQUEST['t_linalool'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[myrcene%]:<b>" . $_REQUEST['t_myrcene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[limonene%]:<b>" . $_REQUEST['t_limonene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[ocimene%]:<b>" . $_REQUEST['t_ocimene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[terpinolene%]:<b>" . $_REQUEST['t_terpinolene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[terpineol%]:<b>" . $_REQUEST['t_terpineol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[valencene%]:<b>" . $_REQUEST['t_valencene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[beta_caryophyllene%]:<b>" . $_REQUEST['t_beta_caryophyllene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[caryophyllene%]:<b>" . $_REQUEST['t_caryophyllene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[geraniol%]:<b>" . $_REQUEST['t_geraniol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[alpha_humulene%]:<b>" . $_REQUEST['t_alpha_humulene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[delta_3_carene%]:<b>" . $_REQUEST['t_delta_3_carene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[terpinene%]:<b>" . $_REQUEST['t_terpinene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[alpha_terpinolene%]:<b>" . $_REQUEST['t_alpha_terpinolene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[fenchol%]:<b>" . $_REQUEST['t_fenchol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[borneol%]:<b>" . $_REQUEST['t_borneol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[oxide%]:<b>" . $_REQUEST['t_oxide'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[alpha_bisabolol%]:<b>" . $_REQUEST['t_alpha_bisabolol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[camphene%]:<b>" . $_REQUEST['t_camphene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[sabinene%]:<b>" . $_REQUEST['t_sabinene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[camphor%]:<b>" . $_REQUEST['t_camphor'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[isoborneol%]:<b>" . $_REQUEST['t_isoborneol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[menthol%]:<b>" . $_REQUEST['t_menthol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[alpha_cedrene%]:<b>" . $_REQUEST['t_alpha_cedrene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[nerolidol%]:<b>" . $_REQUEST['t_nerolidol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[eucalyptol%]:<b>" . $_REQUEST['t_eucalyptol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[geranyl%]:<b>" . $_REQUEST['t_geranyl'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[acetate%]:<b>" . $_REQUEST['t_acetate'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[guaiol%]:<b>" . $_REQUEST['t_guaiol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[phytol%]:<b>" . $_REQUEST['t_phytol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[citronellol%]:<b>" . $_REQUEST['t_citronellol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[p_cymene%]:<b>" . $_REQUEST['t_p_cymene'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[isopulegol%]:<b>" . $_REQUEST['t_isopulegol'] . "</b></div>
+                <div style='width:20%;float: left;'>Terpenes[pulegone%]:<b>" . $_REQUEST['t_pulegone'] . "</b></div>
+                <div style='clear: both; '></div>
+            </div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:100%;'><h5><b>Pesticides</b></h5></div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:96%; padding: 0.8rem 2rem;'>
+                <div style='width:20%;float: left;'>Pesticides[acequinocyl%]:<b>" . $_REQUEST['p_acequinocyl'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[imidacloprid%]:<b>" . $_REQUEST['p_pyrethrium'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[pyrethrium%]:<b>" . $_REQUEST['p_pyrethrium'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[spinosad]:<b>" . $_REQUEST['p_spinosad'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[alpha_terpinolene%]:<b>" . $_REQUEST['p_alpha_terpinolene'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[spiromesifen%]:<b>" . $_REQUEST['p_spiromesifen'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[spirotetramat%]:<b>" . $_REQUEST['p_spirotetramat'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[abamectin%]:<b>" . $_REQUEST['p_abamectin'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[bifenazate%]:<b>" . $_REQUEST['p_bifenazate'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[daminozide%]:<b>" . $_REQUEST['p_daminozide'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[fenoxycarb%]:<b>" . $_REQUEST['p_fenoxycarb'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[myclobutanil%]:<b>" . $_REQUEST['p_myclobutanil'] . "</b></div>
+                <div style='width:20%;float: left;'>Pesticides[paclobutrazol%]:<b>" . $_REQUEST['p_paclobutrazol'] . "</b></div>
+                <div style='clear: both; '></div>
+            </div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:100%;'><h5><b>Microbiological</b></h5></div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:96%; padding: 0.8rem 2rem;'>
+                <div style='width:20%;float: left;'>Microbiological[pseudomonas%]:<b>" . $_REQUEST['m_pseudomonas'] . "</b></div>
+                <div style='width:20%;float: left;'>Microbiological[coliforms%]:<b>" . $_REQUEST['m_coliforms'] . "</b></div>
+                <div style='width:20%;float: left;'>Microbiological[e_coli%]:<b>" . $_REQUEST['m_e_coli'] . "</b></div>
+                <div style='width:20%;float: left;'>Microbiological[salmonella%]:<b>" . $_REQUEST['m_salmonella'] . "</b></div>
+                <div style='width:20%;float: left;'>Microbiological[aerobic_plate_count%]:<b>" . $_REQUEST['m_aerobic_plate_count'] . "</b></div>
+                <div style='clear: both; '></div>
+            </div> 
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:100%;'><h5><b>Solvents</b></h5></div>
+            <hr/>
+            <div style='background-color: whitesmoke; color: black;width:96%; padding: 0.8rem 2rem;'>
+                <div style='width:20%;float: left;'>Solvents[propane%]:<b>" . $_REQUEST['s_propane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[ethanol%]:<b>" . $_REQUEST['s_ethanol'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[methanol%]:<b>" . $_REQUEST['s_methanol'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[isopropanol%]:<b>" . $_REQUEST['s_isopropanol'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[isobutane%]:<b>" . $_REQUEST['s_isobutane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[mercaptan%]:<b>" . $_REQUEST['s_mercaptan'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[dimethylbutane%]:<b>" . $_REQUEST['s_dimethylbutane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[2_methylpentane%]:<b>" . $_REQUEST['s_2_methylpentane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[3_methylpentane%]:<b>" . $_REQUEST['s_3_methylpentane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[cyclohexane_benzene%]:<b>" . $_REQUEST['s_cyclohexane_benzene'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[isopentane%]:<b>" . $_REQUEST['s_isopentane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[neopentane%]:<b>" . $_REQUEST['s_neopentane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[butane%]:<b>" . $_REQUEST['s_butane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[heptane%]:<b>" . $_REQUEST['s_heptane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[hexane%]:<b>" . $_REQUEST['s_hexane'] . "</b></div>
+                <div style='width:20%;float: left;'>Solvents[pentane%]:<b>" . $_REQUEST['s_pentane'] . "</b></div>
+                <div style='clear: both; '></div>
+            </div> 
+            <hr/>
+        </div>
+    </div>";
+    $content .= "</div>";
+    $content .= "</body>";
+    $content .= "</html>";
+//    _mail("testaccts001@gmail.com", "New Record is added", $content);
+//    d(_mail("testaccts001@gmail.com", "New Record is added", $content));
+//    die;
+    $Last_ID = qs("select * from tb_form where batch_number = '{$_REQUEST['batch_no']}'");
+    $_fields = array();
+    $_fields['tb_form_id'] = $Last_ID['id'];
+
+    /* API CALL */
+    $APIKey = _escape($_REQUEST['api_key']);
+    if (!empty($APIKey)) {
+//        include _PATH . "instance/front/tpl/weedAPICall2.php";
+        $_fields['push_data_api'] = "1";
+    } else {
+        $_fields['push_data_api'] = "0";
+    }
+    qi("api_flag", $_fields);
+//    d($chk);
     if (!empty($chk)) {
         $_SESSION['success'] = '1';
         $_SESSION['msg'] = " Record updated successfully!";
@@ -175,14 +322,14 @@ if (isset($_REQUEST['autosave'])) {
 //        die;
     } else {
         $_SESSION['success'] = '-1';
-        $_SESSION['msg'] = " Warrning! Please try After Some time";
+        $_SESSION['msg'] = " Warrning!Please try After Some time";
         echo json_encode(array("success" => "0"));
 //        die;
     }
 }
 $jsInclude = "wm_api.js.php";
 _cg("page_title", "Add Report");
-_cg("current_page", "wm_api");
+_cg("current_page", "wm_api  ");
 ?>
 
 

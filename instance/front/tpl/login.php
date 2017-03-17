@@ -18,12 +18,12 @@
             <div class="card-panel clearfix">
 
                 <div class="row ">
-                    <div class="col s8 logo right" >
+                    <div class="col s12 logo center-align" style="text-align: center;" >
     <!--                    <img src="<?php print _MEDIA_URL ?>/images/MasirApp.png" alt="">-->
                         <!--<img src="<?php print _MEDIA_URL ?>/images/aber-Logos.png" style="height: 140px;width: 120px;" alt="">-->
                         <!--<img src="<?php print _MEDIA_URL ?>/images/aber-logo.png" style="height: 60px;width: 60px;" alt="">-->
                         <!--<img src="<?php print _MEDIA_URL ?>/images/aber-names.png" style="height: 50px;width: 120px;" alt="">-->
-                        <span style="font-weight:bold;font-size:60px;color: #7AC33D;">KS Lab</span>
+                        <span style="font-weight:bold;font-size:60px;color: #7AC33D; align-self: center;">KS Labs</span>
                     </div>
 
                 </div>
@@ -71,19 +71,19 @@
                         <input id="password_login" type="password" class="validate" name="password" placeholder="<?php print _t('189', 'Password'); ?>">
                     </div>
                     <!-- /Password -->
-<!--                    <div class="input-field" >
-                        <i class="mdi-communication-location-on prefix active green-text"></i>
-                          <input data-tooltip='User Email' id="email" name="email"  data-inputmask="'mask': '*{1,64}[.*{1,64}][.*{1,64}][.*{1,64}]@*{1,64}[.*{2,64}][.*{2,6}][.*{1,2}]'" type="email" class=" tooltipped" maxlength="255"  value="" > 
-                        <label for="email">E-Mail</label> 
-                        <select name="office"  id="office" class="validate browser-default custom-select" style="" required >
-                            <option value="" disabled selected><?php print _t('213', 'Choose Office'); ?> </option>
-                                                        <option value="sadeghyeh">sadeghyeh</option>
-                                                        <option value="gandhi">gandhi</option>
-
-
-                        </select>
-
-                    </div>-->
+                    <!--                    <div class="input-field" >
+                                            <i class="mdi-communication-location-on prefix active green-text"></i>
+                                              <input data-tooltip='User Email' id="email" name="email"  data-inputmask="'mask': '*{1,64}[.*{1,64}][.*{1,64}][.*{1,64}]@*{1,64}[.*{2,64}][.*{2,6}][.*{1,2}]'" type="email" class=" tooltipped" maxlength="255"  value="" > 
+                                            <label for="email">E-Mail</label> 
+                                            <select name="office"  id="office" class="validate browser-default custom-select" style="" required >
+                                                <option value="" disabled selected><?php print _t('213', 'Choose Office'); ?> </option>
+                                                                            <option value="sadeghyeh">sadeghyeh</option>
+                                                                            <option value="gandhi">gandhi</option>
+                    
+                    
+                                            </select>
+                    
+                                        </div>-->
                     <div>
                         <?php
                         if (!empty($msg)) {
