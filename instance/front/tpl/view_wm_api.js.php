@@ -4,7 +4,7 @@
     function pushToAPI(id, batch) {
 
 //        $("#modal1").closeModal();
-        alert(id + "-" + batch);
+//        alert(id + "-" + batch);
         $.ajax({
             url: '<?= _U . "view_wm_api"; ?>',
             data: {

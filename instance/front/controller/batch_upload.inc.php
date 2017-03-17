@@ -99,9 +99,9 @@ if (isset($_REQUEST['SendToAPI'])) {
     }
 
     if (!empty($chk1)) {
-//        echo json_encode(array("success" => "1"));
+        echo json_encode(array("success" => "1"));
     } else {
-//        echo json_encode(array("success" => "0"));
+        echo json_encode(array("success" => "0"));
     }
     die;
 }
