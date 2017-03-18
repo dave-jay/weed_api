@@ -2,7 +2,7 @@
 
 <script type="text/javascript">
     function pushToAPI(id) {
-        alert(id);
+//        alert(id);
         $.ajax({
             url: '<?= _U . "batch_upload"; ?>',
             data: {
